@@ -1,0 +1,21 @@
+<%= form_for(@search_engine) do |f| %>
+  <% if @search_engine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search_engine.errors.count, "error") %> prohibited this search_engine from being saved:</h2>
+
+      <ul>
+      <% @search_engine.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :engine %><br>
+    <%= f.text_field :engine %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

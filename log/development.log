@@ -1,0 +1,4596 @@
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-04 23:39:41 +0530
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.1.6) lib/active_record/migration.rb:389:in `check_pending!'
+  activerecord (4.1.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.3ms)
+  [1m[36m (16.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (85.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSearchEngines (20141104175516)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (53.7ms)[0m  [1mCREATE TABLE "search_engines" ("id" serial primary key, "engine" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141104175516"]]
+  [1m[36m (11.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateKeywordPositions (20141104181628)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (53.3ms)[0m  [1mCREATE TABLE "keyword_positions" ("id" serial primary key, "keyword" character varying(255), "position" integer, "search_engine_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (42.2ms)[0m  CREATE  INDEX  "index_keyword_positions_on_search_engine_id" ON "keyword_positions"  ("search_engine_id")
+  [1m[36mSQL (22.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20141104181628"]]
+  [1m[35m (29.9ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-04 23:52:26 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SearchEnginesController#index as HTML
+Completed 500 Internal Server Error in 15ms
+
+NoMethodError (undefined method `allow' for #<Class:0x007f8788812f88>):
+  app/controllers/search_engines_controller.rb:7:in `index'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-04 23:52:48 +0530
+Processing by SearchEnginesController#index as HTML
+  [1m[35mSearchEngine Load (0.6ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered search_engines/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 560ms (Views: 558.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-04 23:52:49 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-04 23:52:49 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-04 23:52:49 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-04 23:52:49 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-04 23:52:49 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-04 23:52:49 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-04 23:52:49 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-04 23:52:49 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-04 23:52:49 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-04 23:52:49 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-04 23:55:52 +0530
+Processing by SearchEnginesController#index as HTML
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered search_engines/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 43ms (Views: 42.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-04 23:55:52 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-04 23:55:52 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-04 23:55:52 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-04 23:55:52 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-04 23:55:52 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-04 23:55:52 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-04 23:55:52 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-04 23:55:52 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-04 23:55:52 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-04 23:55:52 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (32.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateKeywordPositions (20141104181628)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (160.0ms)[0m  DROP TABLE "keyword_positions"
+  [1m[36mSQL (20.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141104181628'[0m
+  [1m[35m (19.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateDomains (20141105032834)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (200.1ms)[0m  [1mCREATE TABLE "domains" ("id" serial primary key, "name" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141105032834"]]
+  [1m[36m (21.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateKeywordPositions (20141105033120)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (70.1ms)[0m  [1mCREATE TABLE "keyword_positions" ("id" serial primary key, "keyword" character varying(255), "position" integer, "search_engines_id" integer, "domains_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (54.1ms)[0m  CREATE  INDEX  "index_keyword_positions_on_search_engines_id" ON "keyword_positions"  ("search_engines_id")
+  [1m[36m (55.1ms)[0m  [1mCREATE  INDEX  "index_keyword_positions_on_domains_id" ON "keyword_positions"  ("domains_id")[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141105033120"]]
+  [1m[36m (22.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateKeywordPositions (20141105033120)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.2ms)[0m  DROP TABLE "keyword_positions"
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141105033120'[0m
+  [1m[35m (27.2ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateKeywordPositions (20141105033747)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (54.1ms)[0m  [1mCREATE TABLE "keyword_positions" ("id" serial primary key, "keyword" character varying(255), "position" integer, "search_engine_id" integer, "domain_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (53.5ms)[0m  CREATE  INDEX  "index_keyword_positions_on_search_engine_id" ON "keyword_positions"  ("search_engine_id")
+  [1m[36m (53.8ms)[0m  [1mCREATE  INDEX  "index_keyword_positions_on_domain_id" ON "keyword_positions"  ("domain_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141105033747"]]
+  [1m[36m (14.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 09:08:16 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  Rendered dashboard/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 663ms (Views: 646.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 09:08:17 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 09:08:17 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 09:08:17 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 09:08:17 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:08:17 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:17 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 09:08:17 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:17 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:17 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:17 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:17 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:17 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:17 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:17 +0530
+
+
+Started GET "/search_engine" for 127.0.0.1 at 2014-11-05 09:08:34 +0530
+
+ActionController::RoutingError (No route matches [GET] "/search_engine"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.2ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (22.8ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (242.0ms)
+
+
+Started GET "/search_engines" for 127.0.0.1 at 2014-11-05 09:08:40 +0530
+Processing by SearchEnginesController#index as HTML
+  [1m[35mSearchEngine Load (25.5ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered search_engines/index.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 179ms (Views: 119.7ms | ActiveRecord: 25.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 09:08:40 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 09:08:40 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:08:40 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 09:08:40 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:40 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 09:08:40 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:40 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:40 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:40 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:40 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:40 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:40 +0530
+
+
+Started GET "/search_engines/new" for 127.0.0.1 at 2014-11-05 09:08:44 +0530
+Processing by SearchEnginesController#new as HTML
+  Rendered search_engines/_form.html.erb (59.2ms)
+  Rendered search_engines/new.html.erb within layouts/application (60.6ms)
+Completed 200 OK in 142ms (Views: 136.7ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/search_engines" for 127.0.0.1 at 2014-11-05 09:08:55 +0530
+Processing by SearchEnginesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D38ItxLeL/+YrqNae+Pse4G1LvU/0n9MGFsdUS4gxYU=", "search_engine"=>{"engine"=>"https://www.google.co.in/"}, "commit"=>"Create Search engine"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (9.8ms)[0m  INSERT INTO "search_engines" ("created_at", "engine", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", "2014-11-05 03:38:55.393149"], ["engine", "https://www.google.co.in/"], ["updated_at", "2014-11-05 03:38:55.393149"]]
+  [1m[36m (16.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/search_engines/1
+Completed 302 Found in 115ms (ActiveRecord: 26.8ms)
+
+
+Started GET "/search_engines/1" for 127.0.0.1 at 2014-11-05 09:08:55 +0530
+Processing by SearchEnginesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSearchEngine Load (0.6ms)[0m  SELECT  "search_engines".* FROM "search_engines"  WHERE "search_engines"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered search_engines/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 94ms (Views: 87.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 09:08:55 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 09:08:55 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:08:55 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 09:08:55 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:55 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:55 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 09:08:55 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:55 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:55 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:55 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:55 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:08:55 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 09:09:04 +0530
+Processing by DashboardController#index as HTML
+  Rendered dashboard/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 60ms (Views: 59.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 09:09:04 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 09:09:04 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 09:09:04 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 09:09:04 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:09:04 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:09:04 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 09:09:04 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 09:09:04 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:09:04 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:09:04 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 09:09:04 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:09:04 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 09:10:54 +0530
+Processing by DashboardController#index as HTML
+  Rendered dashboard/index.html.erb within layouts/application (21.0ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (undefined method `first' for nil:NilClass):
+    1: <h1>Helloworld</h1>
+    2: 
+    3: <%= @search_engies.first%>
+  app/views/dashboard/index.html.erb:3:in `_app_views_dashboard_index_html_erb__470192365087855776_70341424823340'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 09:11:05 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT  "search_engines".* FROM "search_engines"   ORDER BY "search_engines"."id" ASC LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 69ms (Views: 66.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 09:11:05 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 09:11:05 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 09:11:05 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 09:11:05 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:11:05 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 09:11:05 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:11:05 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:11:05 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:11:05 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 09:11:05 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 09:11:05 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:11:05 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 09:11:05 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 09:11:05 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 09:11:17 +0530
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (0.4ms)[0m  SELECT  "search_engines".* FROM "search_engines"   ORDER BY "search_engines"."id" ASC LIMIT 1
+  Rendered dashboard/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `name' for #<SearchEngine:0x007ff3470b6f20>):
+    1: <h1>Helloworld</h1>
+    2: 
+    3: <%= @search_engines.first.name %>
+  app/views/dashboard/index.html.erb:3:in `_app_views_dashboard_index_html_erb__470192365087855776_70341422926360'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 09:11:41 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.4ms)[0m  [1mSELECT  "search_engines".* FROM "search_engines"   ORDER BY "search_engines"."id" ASC LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 69ms (Views: 67.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 09:11:41 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 09:11:41 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 09:11:41 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 09:11:41 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:11:41 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:11:41 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 09:11:41 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:11:41 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:11:41 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 09:11:41 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 09:11:41 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 09:11:41 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 09:11:41 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:11:41 +0530
+
+
+Started GET "/search_engines" for 127.0.0.1 at 2014-11-05 09:14:06 +0530
+Processing by SearchEnginesController#index as HTML
+  [1m[35mSearchEngine Load (0.5ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered search_engines/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 60ms (Views: 59.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 09:14:06 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 09:14:06 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 09:14:06 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 09:14:06 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 09:14:06 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:14:06 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:14:06 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:14:06 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:14:06 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 09:14:06 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 09:14:06 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 09:14:06 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 09:14:06 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:14:06 +0530
+
+
+Started GET "/search_engine" for 127.0.0.1 at 2014-11-05 09:14:08 +0530
+
+ActionController::RoutingError (No route matches [GET] "/search_engine"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (19.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 09:19:29 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.4ms)[0m  [1mSELECT  "search_engines".* FROM "search_engines"   ORDER BY "search_engines"."id" ASC LIMIT 1[0m
+  [1m[35mSearchEngine Load (0.3ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (14.3ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (undefined local variable or method `dashboards_path' for #<#<Class:0x007ff347491528>:0x007ff345e65bf0>):
+    2: <%= @search_engines.first.engine %>
+    3: 
+    4: 
+    5: <%= form_tag dashboards_path, method: :get do %> 
+    6:     <%= text_field_tag :search, params[:search], placeholder: "Keyword..." %> 
+    7: <% end %> 
+  app/views/dashboard/index.html.erb:5:in `_app_views_dashboard_index_html_erb__470192365087855776_70341413231100'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 09:19:42 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.4ms)[0m  [1mSELECT  "search_engines".* FROM "search_engines"   ORDER BY "search_engines"."id" ASC LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 65ms (Views: 63.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 09:19:42 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 09:19:42 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 09:19:42 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 09:19:42 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 09:19:42 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:19:42 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:19:42 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:19:42 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:19:42 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 09:19:42 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:19:42 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 09:19:42 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 09:19:42 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 09:19:42 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 09:21:31 +0530
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (0.5ms)[0m  SELECT  "search_engines".* FROM "search_engines"   ORDER BY "search_engines"."id" ASC LIMIT 1
+  Rendered dashboard/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 64ms (Views: 62.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 09:21:31 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 09:21:31 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 09:21:31 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:21:31 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 09:21:31 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:21:31 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 09:21:31 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:21:31 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:21:31 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 09:21:31 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 09:21:31 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 09:21:31 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 09:21:31 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:21:31 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 09:50:59 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT  "search_engines".* FROM "search_engines"   ORDER BY "search_engines"."id" ASC LIMIT 1[0m
+  [1m[35mSearchEngine Load (0.4ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 61ms (Views: 59.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 09:50:59 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 09:50:59 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 09:50:59 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:50:59 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:50:59 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 09:50:59 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 09:50:59 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:50:59 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:50:59 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 09:50:59 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 09:50:59 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 09:50:59 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 09:50:59 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:50:59 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 09:51:43 +0530
+Processing by DashboardController#index as HTML
+  Rendered dashboard/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 4ms
+
+SyntaxError (/home/mothirajha/myapp/seotool/app/views/dashboard/index.html.erb:7: syntax error, unexpected ','
+...rch_engines, "id", "engine"), , prompt: "Select search engin...
+...                               ^):
+  app/views/dashboard/index.html.erb:7: syntax error, unexpected ','
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 09:51:57 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.7ms)[0m  [1mSELECT  "search_engines".* FROM "search_engines"   ORDER BY "search_engines"."id" ASC LIMIT 1[0m
+  [1m[35mSearchEngine Load (0.4ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 69ms (Views: 67.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 09:51:57 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 09:51:57 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 09:51:57 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 09:51:57 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:51:57 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 09:51:57 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:51:57 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:51:57 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:51:57 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 09:51:57 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 09:51:57 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 09:51:57 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:51:57 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 09:51:57 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 09:56:21 +0530
+Processing by DashboardController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `pry' for #<Binding:0x007ff346edd370>):
+  app/controllers/dashboard_controller.rb:4:in `index'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 09:58:05 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  Rendered dashboard/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 9670ms
+
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    3: 
+    4: <%= form_tag root_path, method: :get do %> 
+    5:   <%= text_field_tag :search, params[:search], placeholder: "Keyword..." %>
+    6:   <%= select_tag "engine", options_from_collection_for_select(@search_engines, "id", "engine") , prompt: "Select search engine" %>
+    7:   <%= submit_tag "submit"%> 
+    8: <% end %> 
+  app/views/dashboard/index.html.erb:6:in `block in _app_views_dashboard_index_html_erb___3007758727184493751_70247384784460'
+  app/views/dashboard/index.html.erb:4:in `_app_views_dashboard_index_html_erb___3007758727184493751_70247384784460'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 09:59:03 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (0.8ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 121ms (Views: 107.3ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 09:59:04 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 09:59:04 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 09:59:04 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 09:59:04 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 09:59:04 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:59:04 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:59:04 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:59:04 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:59:04 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 09:59:04 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 09:59:04 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 09:59:04 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 09:59:04 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:59:04 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&search=Google+Nexus+5+&engine=1&commit=submit" for 127.0.0.1 at 2014-11-05 09:59:09 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Google Nexus 5 ", "engine"=>"1", "commit"=>"submit"}
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 172430ms
+
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    3: 
+    4: <%= form_tag root_path, method: :get do %> 
+    5:   <%= text_field_tag :search, params[:search], placeholder: "Keyword..." %>
+    6:   <%= select_tag "engine", options_from_collection_for_select(@search_engines, "id", "engine") , prompt: "Select search engine" %>
+    7:   <%= submit_tag "submit"%> 
+    8: <% end %> 
+  app/views/dashboard/index.html.erb:6:in `block in _app_views_dashboard_index_html_erb___2706047223864964910_70305051021680'
+  app/views/dashboard/index.html.erb:4:in `_app_views_dashboard_index_html_erb___2706047223864964910_70305051021680'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 10:02:59 +0530
+Processing by DashboardController#index as HTML
+  Rendered dashboard/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (wrong number of arguments (2 for 3..4)):
+    3: 
+    4: <%= form_tag root_path, method: :get do %> 
+    5:   <%= text_field_tag :search, params[:search], placeholder: "Keyword..." %>
+    6:   <%= select_tag "engine", options_from_collection_for_select(@search_engines, "engine") , prompt: "Select search engine" %>
+    7:   <%= submit_tag "submit"%> 
+    8: <% end %> 
+  app/views/dashboard/index.html.erb:6:in `block in _app_views_dashboard_index_html_erb___2706047223864964910_70305048050260'
+  app/views/dashboard/index.html.erb:4:in `_app_views_dashboard_index_html_erb___2706047223864964910_70305048050260'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 10:04:52 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 73ms (Views: 71.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 10:04:53 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 10:04:53 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 10:04:53 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 10:04:53 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 10:04:53 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 10:04:53 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 10:04:53 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 10:04:53 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 10:04:53 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 10:04:53 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 10:04:53 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 10:04:53 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 10:04:53 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 10:04:53 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:10:26 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (69.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (31.7ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (73.0ms)
+Completed 200 OK in 513ms (Views: 431.2ms | ActiveRecord: 52.7ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 22:10:27 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 22:10:27 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:10:27 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 22:10:28 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 22:10:28 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 22:10:28 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 22:10:28 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 22:10:28 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 22:10:28 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 22:10:28 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 22:10:28 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 22:10:28 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 22:10:28 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 22:10:28 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:13:52 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 53ms (Views: 51.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 22:13:52 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 22:13:52 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:13:52 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 22:13:52 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 22:13:52 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 22:13:52 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 22:13:52 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 22:13:52 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 22:13:52 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 22:13:52 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 22:13:52 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 22:13:52 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 22:13:52 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 22:13:52 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 22:13:56 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 22:13:56 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 22:13:56 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 22:13:56 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:13:56 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 22:13:56 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:15:52 +0530
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (0.9ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 63ms (Views: 61.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 22:15:52 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 22:15:52 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 22:15:52 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 22:15:52 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 22:15:52 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:15:52 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 22:15:52 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 22:15:52 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 22:15:52 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 22:15:52 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 22:15:52 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 22:15:52 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 22:15:52 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 22:15:52 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:15:55 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 53ms (Views: 52.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:15:57 +0530
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (0.5ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 52ms (Views: 50.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:15:58 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 67ms (Views: 65.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:15:58 +0530
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (0.4ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 56ms (Views: 55.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:15:59 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 52ms (Views: 50.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:16:37 +0530
+Processing by DashboardController#index as HTML
+  Rendered dashboard/index.html.erb within layouts/application (136.0ms)
+Completed 500 Internal Server Error in 139ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"domains"} missing required keys: [:id]):
+    1: <h1>SEO Tool to find Search Position</h1>
+    2: 
+    3: <%= link_to "<button>This is a button</button>".html_safe, domain_path %>
+    4: <%= form_tag root_path, method: :get do %> 
+    5:   <%= text_field_tag :search, params[:search], placeholder: "Keyword..." %>
+    6:   <%= select_tag "engine", options_from_collection_for_select(@search_engines, "id","engine") , prompt: "Select search engine" %>
+  app/views/dashboard/index.html.erb:3:in `_app_views_dashboard_index_html_erb__785267701923868334_70136717065420'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:17:02 +0530
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (0.5ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (12.7ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined local variable or method `domain_pathi' for #<#<Class:0x007f940f67c7f8>:0x007f93f44f2d30>):
+    1: <h1>SEO Tool to find Search Position</h1>
+    2: 
+    3: <%= link_to "<button>This is a button</button>".html_safe, domain_pathi, id: "domain" %>
+    4: <%= form_tag root_path, method: :get do %> 
+    5:   <%= text_field_tag :search, params[:search], placeholder: "Keyword..." %>
+    6:   <%= select_tag "engine", options_from_collection_for_select(@search_engines, "id","engine") , prompt: "Select search engine" %>
+  app/views/dashboard/index.html.erb:3:in `_app_views_dashboard_index_html_erb__785267701923868334_70136717872420'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:17:08 +0530
+Processing by DashboardController#index as HTML
+  Rendered dashboard/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"domains"} missing required keys: [:id]):
+    1: <h1>SEO Tool to find Search Position</h1>
+    2: 
+    3: <%= link_to "<button>This is a button</button>".html_safe, domain_path, id: "domain" %>
+    4: <%= form_tag root_path, method: :get do %> 
+    5:   <%= text_field_tag :search, params[:search], placeholder: "Keyword..." %>
+    6:   <%= select_tag "engine", options_from_collection_for_select(@search_engines, "id","engine") , prompt: "Select search engine" %>
+  app/views/dashboard/index.html.erb:3:in `_app_views_dashboard_index_html_erb__785267701923868334_70136718735020'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:17:32 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.4ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 75ms (Views: 73.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 22:17:32 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 22:17:32 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 22:17:32 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 22:17:32 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 22:17:32 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 22:17:32 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:17:32 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 22:17:32 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 22:17:32 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 22:17:32 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 22:17:32 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 22:17:32 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 22:17:32 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 22:17:32 +0530
+
+
+Started GET "/domains" for 127.0.0.1 at 2014-11-05 22:17:39 +0530
+Processing by DomainsController#index as HTML
+  [1m[35mDomain Load (19.2ms)[0m  SELECT "domains".* FROM "domains"
+  Rendered domains/index.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 105ms (Views: 75.0ms | ActiveRecord: 19.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:23:02 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 59ms (Views: 57.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 22:23:02 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 22:23:02 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 22:23:02 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 22:23:02 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 22:23:02 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:23:02 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 22:23:02 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 22:23:02 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 22:23:02 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 22:23:02 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 22:23:02 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 22:23:02 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 22:23:02 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 22:23:02 +0530
+
+
+Started GET "/domains" for 127.0.0.1 at 2014-11-05 22:23:10 +0530
+Processing by DomainsController#index as HTML
+  [1m[35mDomain Load (0.4ms)[0m  SELECT "domains".* FROM "domains"
+  Rendered domains/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 63ms (Views: 62.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:36:23 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (0.7ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 117ms (Views: 104.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 22:36:24 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 22:36:24 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 22:36:24 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 22:36:24 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 22:36:24 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:36:24 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 22:36:24 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 22:36:24 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 22:36:24 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 22:36:24 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 22:36:24 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 22:36:24 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 22:36:24 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 22:36:24 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&search=hot+deals&engine=1&commit=submit" for 127.0.0.1 at 2014-11-05 22:36:35 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"hot deals", "engine"=>"1", "commit"=>"submit"}
+  Rendered dashboard/index.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 46404ms
+
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    3: <%= link_to "<button>Login</button>".html_safe, domains_path%>
+    4: <%= form_tag root_path, method: :get do %> 
+    5:   <%= text_field_tag :search, params[:search], placeholder: "Keyword..." %>
+    6:   <%= select_tag "engine", options_from_collection_for_select(@search_engines, "id","engine") , prompt: "Select search engine" %>
+    7:   <%= submit_tag "submit"%> 
+    8: <% end %> 
+  app/views/dashboard/index.html.erb:6:in `block in _app_views_dashboard_index_html_erb___4133331817271788331_70131078349880'
+  app/views/dashboard/index.html.erb:4:in `_app_views_dashboard_index_html_erb___4133331817271788331_70131078349880'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:37:26 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.4ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 58ms (Views: 56.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 22:37:26 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 22:37:26 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 22:37:26 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 22:37:26 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 22:37:26 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 22:37:26 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 22:37:26 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:37:26 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 22:37:26 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 22:37:26 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 22:37:26 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 22:37:26 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 22:37:26 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 22:37:26 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&search=hot&engine=1&commit=submit" for 127.0.0.1 at 2014-11-05 22:37:51 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"hot", "engine"=>"1", "commit"=>"submit"}
+  Rendered dashboard/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 255374ms
+
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    3: <%= link_to "<button>Login</button>".html_safe, domains_path%>
+    4: <%= form_tag root_path, method: :get do %> 
+    5:   <%= text_field_tag :search, params[:search], placeholder: "Keyword..." %>
+    6:   <%= select_tag "engine", options_from_collection_for_select(@search_engines, "id","engine") , prompt: "Select search engine" %>
+    7:   <%= submit_tag "submit"%> 
+    8: <% end %> 
+  app/views/dashboard/index.html.erb:6:in `block in _app_views_dashboard_index_html_erb___4133331817271788331_70131078349880'
+  app/views/dashboard/index.html.erb:4:in `_app_views_dashboard_index_html_erb___4133331817271788331_70131078349880'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:42:13 +0530
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (0.6ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 82ms (Views: 74.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 22:42:13 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 22:42:13 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 22:42:13 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 22:42:13 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:42:13 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 22:42:13 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 22:42:13 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 22:42:13 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 22:42:13 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 22:42:13 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 22:42:13 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 22:42:13 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 22:42:13 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 22:42:13 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:43:11 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.4ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 60ms (Views: 55.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 22:43:11 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 22:43:11 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 22:43:11 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 22:43:11 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:43:11 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 22:43:11 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 22:43:11 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 22:43:11 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 22:43:11 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 22:43:11 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 22:43:11 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 22:43:11 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 22:43:11 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 22:43:11 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 22:44:02 +0530
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (0.3ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 70ms (Views: 69.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-05 22:44:02 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-05 22:44:02 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 22:44:02 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-05 22:44:02 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-05 22:44:02 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-05 22:44:02 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 22:44:02 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 22:44:02 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-05 22:44:02 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-05 22:44:02 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 22:44:02 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 22:44:02 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-05 22:44:02 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-05 22:44:02 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 00:40:30 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 63ms (Views: 58.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-06 00:40:30 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 00:40:30 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 00:40:30 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 00:40:30 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 00:40:30 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 00:40:30 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 00:40:30 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 00:40:30 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 00:40:30 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 00:40:30 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 00:40:30 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-06 00:40:30 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 00:40:30 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 00:40:30 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&search=hot&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 00:40:39 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"hot", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  Rendered dashboard/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 56180ms
+
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    3: <%= link_to "<button>Login</button>".html_safe, domains_path%>
+    4: <%= form_tag root_path, method: :get do %> 
+    5:   <%= text_field_tag :search, params[:search], placeholder: "Keyword..." %>
+    6:   <%= select_tag "engine", options_for_select(@search_engines.map(&:engine), "engine") , prompt: "Select search engine" %>
+    7:   <%= submit_tag "submit"%> 
+    8: <% end %> 
+  app/views/dashboard/index.html.erb:6:in `block in _app_views_dashboard_index_html_erb___4133331817271788331_70130849261320'
+  app/views/dashboard/index.html.erb:4:in `_app_views_dashboard_index_html_erb___4133331817271788331_70130849261320'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 00:41:41 +0530
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (0.3ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 86ms (Views: 84.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 00:41:41 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 00:41:41 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-06 00:41:41 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 00:41:41 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 00:41:41 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 00:41:41 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 00:41:41 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 00:41:41 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 00:41:41 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 00:41:41 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 00:41:41 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-06 00:41:41 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 00:41:41 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 00:41:41 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 00:43:33 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 63ms (Views: 58.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 00:43:33 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 00:43:33 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 00:43:33 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 00:43:33 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-06 00:43:33 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 00:43:33 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 00:43:33 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 00:43:33 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 00:43:33 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 00:43:33 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 00:43:33 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-06 00:43:33 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 00:43:33 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 00:43:33 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=samsung&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 00:43:47 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"samsung", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.5ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 00:43:48 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-06 00:43:48 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 00:43:48 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 00:43:48 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 00:43:48 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 00:43:48 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 00:43:48 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 00:43:48 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 00:43:48 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 00:43:48 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 00:43:48 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-06 00:43:48 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 00:43:48 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 00:43:48 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=samsung&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 00:44:22 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"samsung", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  Rendered dashboard/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 23308ms
+
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    4: <%= form_tag root_path, method: :get do %> 
+    5:   <%= text_field_tag :keyword, params[:keyword], placeholder: "Keyword..." %>
+    6:   <%= text_field_tag :domain, params[:domain], placeholder: "Domain name ..." %>
+    7:   <%= select_tag "engine", options_for_select(@search_engines.map(&:engine), "engine") , prompt: "Select search engine" %>
+    8:   <%= submit_tag "submit"%> 
+    9: <% end %> 
+  app/views/dashboard/index.html.erb:7:in `block in _app_views_dashboard_index_html_erb___4133331817271788331_70130919391820'
+  app/views/dashboard/index.html.erb:4:in `_app_views_dashboard_index_html_erb___4133331817271788331_70130919391820'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 00:44:55 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 70ms (Views: 66.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 00:44:55 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 00:44:55 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-06 00:44:55 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 00:44:55 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 00:44:55 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 00:44:55 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 00:44:56 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 00:44:56 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 00:44:56 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 00:44:56 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 00:44:56 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-06 00:44:56 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 00:44:56 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 00:44:56 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 00:48:02 +0530
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (0.5ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 58ms (Views: 53.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 00:48:02 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 00:48:02 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 00:48:02 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 00:48:02 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-06 00:48:02 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 00:48:02 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 00:48:02 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 00:48:02 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 00:48:02 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 00:48:02 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 00:48:02 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-06 00:48:02 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 00:48:02 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 00:48:02 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=samsung&domain=flipkart.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 00:48:14 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"samsung", "domain"=>"flipkart.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  Rendered dashboard/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 648ms
+
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    4: <%= form_tag root_path, method: :get do %> 
+    5:   <%= text_field_tag :keyword, params[:keyword], placeholder: "Keyword..." %>
+    6:   <%= text_field_tag :domain, params[:domain], placeholder: "Domain name ..." %>
+    7:   <%= select_tag "engine", options_for_select(@search_engines.map(&:engine), "engine") , prompt: "Select search engine" %>
+    8:   <%= submit_tag "submit"%> 
+    9: <% end %>
+   10: 
+  app/views/dashboard/index.html.erb:7:in `block in _app_views_dashboard_index_html_erb___4133331817271788331_70130847036340'
+  app/views/dashboard/index.html.erb:4:in `_app_views_dashboard_index_html_erb___4133331817271788331_70130847036340'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.0ms)
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=samsung&domain=flipkart.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 00:50:21 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"samsung", "domain"=>"flipkart.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  Rendered dashboard/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 753ms
+
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    4: <%= form_tag root_path, method: :get do %> 
+    5:   <%= text_field_tag :keyword, params[:keyword], placeholder: "Keyword..." %>
+    6:   <%= text_field_tag :domain, params[:domain], placeholder: "Domain name ..." %>
+    7:   <%= select_tag "engine", options_for_select(@search_engines.map(&:engine), "engine") , prompt: "Select search engine" %>
+    8:   <%= submit_tag "submit"%> 
+    9: <% end %>
+   10: 
+  app/views/dashboard/index.html.erb:7:in `block in _app_views_dashboard_index_html_erb___4133331817271788331_70131066489500'
+  app/views/dashboard/index.html.erb:4:in `_app_views_dashboard_index_html_erb___4133331817271788331_70131066489500'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 00:50:26 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 54ms (Views: 53.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 00:50:26 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 00:50:26 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 00:50:26 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 00:50:26 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-06 00:50:26 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 00:50:26 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 00:50:26 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 00:50:26 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 00:50:26 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 00:50:26 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 00:50:26 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-06 00:50:26 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 00:50:26 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 00:50:26 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 00:50:39 +0530
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (0.4ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 52ms (Views: 51.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 00:50:39 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-06 00:50:39 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 00:50:39 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 00:50:39 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 00:50:39 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 00:50:39 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 00:50:39 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 00:50:39 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 00:50:39 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 00:50:39 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-06 00:50:39 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 00:50:39 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 00:50:39 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 00:50:39 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=samsung&domain=flipkart.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 00:50:48 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"samsung", "domain"=>"flipkart.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  Rendered dashboard/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 772ms
+
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+     7:   <%= form_tag root_path, method: :get do %> 
+     8:     <%= text_field_tag :keyword, params[:keyword], placeholder: "Keyword..." %>
+     9:     <%= text_field_tag :domain, params[:domain], placeholder: "Domain name ..." %>
+    10:     <%= select_tag "engine", options_for_select(@search_engines.map(&:engine), "engine") , prompt: "Select search engine" %>
+    11:     <%= submit_tag "submit"%> 
+    12:   <%end%>
+    13: <%end%>
+  app/views/dashboard/index.html.erb:10:in `block in _app_views_dashboard_index_html_erb___4133331817271788331_70130877026400'
+  app/views/dashboard/index.html.erb:7:in `_app_views_dashboard_index_html_erb___4133331817271788331_70130877026400'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 01:00:57 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.4ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 53ms (Views: 51.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 01:00:58 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-06 01:00:58 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 01:00:58 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 01:00:58 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 01:00:58 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 01:00:58 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 01:00:58 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 01:00:58 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 01:00:58 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 01:00:58 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 01:00:58 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 01:00:58 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 01:00:58 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-06 01:00:58 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=samsung&domain=flipkart.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 01:01:05 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"samsung", "domain"=>"flipkart.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  Rendered dashboard/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 603ms
+
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+     7:   <%= form_tag root_path, method: :get do %> 
+     8:     <%= text_field_tag :keyword, params[:keyword], placeholder: "Keyword..." %>
+     9:     <%= text_field_tag :domain, params[:domain], placeholder: "Domain name ..." %>
+    10:     <%= select_tag "engine", options_for_select(@search_engines.map(&:engine), "engine") , prompt: "Select search engine" %>
+    11:     <%= submit_tag "submit"%> 
+    12:   <%end%>
+    13: <%end%>
+  app/views/dashboard/index.html.erb:10:in `block in _app_views_dashboard_index_html_erb___4133331817271788331_70131066242520'
+  app/views/dashboard/index.html.erb:7:in `_app_views_dashboard_index_html_erb___4133331817271788331_70131066242520'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.1ms)
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=samsung&domain=flipkart.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 01:03:04 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"samsung", "domain"=>"flipkart.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+Completed 500 Internal Server Error in 3ms
+
+NoMethodError (undefined method `get_keyword_position_on_100_resulti' for #<V1::Googler::Scrap:0x007f9153ceb558>):
+  app/controllers/dashboard_controller.rb:6:in `index'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.5ms)
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=samsung&domain=flipkart.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 01:03:21 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"samsung", "domain"=>"flipkart.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.5ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 708ms (Views: 55.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 01:03:22 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 01:03:22 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-06 01:03:22 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 01:03:22 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 01:03:22 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 01:03:22 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 01:03:22 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 01:03:22 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 01:03:22 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 01:03:22 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 01:03:22 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-06 01:03:22 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 01:03:22 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 01:03:22 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=samsung&domain=flipkart.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 01:03:29 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"samsung", "domain"=>"flipkart.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 680ms (Views: 52.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 01:03:30 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 01:03:30 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-06 01:03:30 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 01:03:30 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 01:03:30 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 01:03:30 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 01:03:30 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 01:03:30 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 01:03:30 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 01:03:30 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 01:03:30 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-06 01:03:30 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 01:03:30 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 01:03:30 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=samsung&domain=flipkart.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 01:04:33 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"samsung", "domain"=>"flipkart.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.5ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 961ms (Views: 49.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 01:04:34 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 01:04:34 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-06 01:04:34 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 01:04:34 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 01:04:34 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 01:04:34 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 01:04:34 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 01:04:34 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 01:04:34 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 01:04:34 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 01:04:34 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-06 01:04:34 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 01:04:34 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 01:04:34 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=samsung&domain=flipkart.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 01:05:10 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"samsung", "domain"=>"flipkart.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 46571ms (Views: 68.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 01:05:56 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 01:05:56 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 01:05:56 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 01:05:56 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-06 01:05:56 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 01:05:56 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 01:05:56 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 01:05:56 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 01:05:56 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 01:05:56 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 01:05:56 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-06 01:05:56 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 01:05:56 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 01:05:56 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=hot+deals&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 01:06:23 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"hot deals", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.5ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 901ms (Views: 54.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 01:06:24 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 01:06:24 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 01:06:24 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-06 01:06:24 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 01:06:24 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 01:06:24 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 01:06:24 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 01:06:24 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 01:06:24 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 01:06:24 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 01:06:24 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-06 01:06:24 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 01:06:24 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 01:06:24 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=amazon.in+deals&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 01:07:13 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"amazon.in deals", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.6ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 893ms (Views: 57.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 01:07:14 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 01:07:14 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 01:07:14 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 01:07:14 +0530
+
+
+Started GET "/assets/keyword_positions.css?body=1" for 127.0.0.1 at 2014-11-06 01:07:14 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 01:07:14 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 01:07:14 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 01:07:14 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 01:07:14 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 01:07:14 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 01:07:14 +0530
+
+
+Started GET "/assets/keyword_positions.js?body=1" for 127.0.0.1 at 2014-11-06 01:07:14 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 01:07:14 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 01:07:14 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (31.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateKeywordPositions (20141105033747)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (141.0ms)[0m  DROP TABLE "keyword_positions"
+  [1m[36mSQL (19.8ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141105033747'[0m
+  [1m[35m (12.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateKeywords (20141106031336)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (221.5ms)[0m  [1mCREATE TABLE "keywords" ("id" serial primary key, "domain_id" integer, "search_engine_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (52.8ms)[0m  CREATE  INDEX  "index_keywords_on_domain_id" ON "keywords"  ("domain_id")
+  [1m[36m (53.6ms)[0m  [1mCREATE  INDEX  "index_keywords_on_search_engine_id" ON "keywords"  ("search_engine_id")[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141106031336"]]
+  [1m[36m (15.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateKeywords (20141106031336)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.4ms)[0m  DROP TABLE "keywords"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141106031336'[0m
+  [1m[35m (69.1ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateKeywords (20141106031459)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (117.6ms)[0m  [1mCREATE TABLE "keywords" ("id" serial primary key, "domain_id" integer, "search_engine_id" integer, "word" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (52.6ms)[0m  CREATE  INDEX  "index_keywords_on_domain_id" ON "keywords"  ("domain_id")
+  [1m[36m (75.8ms)[0m  [1mCREATE  INDEX  "index_keywords_on_search_engine_id" ON "keywords"  ("search_engine_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141106031459"]]
+  [1m[36m (18.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 08:46:33 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (35.4ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (48.7ms)
+Completed 200 OK in 767ms (Views: 702.5ms | ActiveRecord: 39.2ms)
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 08:46:34 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 08:46:34 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 08:46:34 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 08:46:34 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 08:46:34 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 08:46:34 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 08:46:34 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 08:46:34 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 08:46:34 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 08:46:34 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 08:46:34 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 08:46:34 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 08:46:34 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 08:46:34 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=hot+deals&domain=coupondunia.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 08:46:52 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"hot deals", "domain"=>"coupondunia.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 2152ms (Views: 49.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 08:46:54 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 08:46:54 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 08:46:54 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 08:46:54 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 08:46:54 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 08:46:54 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 08:46:54 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 08:46:54 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 08:46:54 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 08:46:54 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 08:46:54 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 08:46:54 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 08:46:54 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 08:46:54 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=hot+deals&domain=flipkart.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 08:49:09 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"hot deals", "domain"=>"flipkart.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.5ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 2014ms (Views: 61.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 08:49:11 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 08:49:11 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 08:49:11 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 08:49:11 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 08:49:11 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 08:49:11 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 08:49:11 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 08:49:11 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 08:49:11 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 08:49:11 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 08:49:11 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 08:49:11 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 08:49:11 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 08:49:11 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=hot+deals&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 08:59:58 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"hot deals", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.4ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 2093ms (Views: 60.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:01 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:01 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:01 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:01 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:01 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:01 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:01 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:01 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:01 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:01 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:01 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:01 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:01 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:01 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=amazon.in+deals&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:00:13 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"amazon.in deals", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.5ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 1966ms (Views: 61.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:15 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:15 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:15 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:15 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:15 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:15 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:15 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:15 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:15 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:15 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:15 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:15 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:15 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:15 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=flipkart+coupons&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:00:41 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"flipkart coupons", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1232ms (Views: 96.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:42 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:42 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:42 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:42 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:42 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:00:42 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:42 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:42 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:42 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:42 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:42 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:42 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:42 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:00:42 +0530
+
+
+Started GET "/domains" for 127.0.0.1 at 2014-11-06 09:01:10 +0530
+Processing by DomainsController#index as HTML
+  [1m[35mDomain Load (43.1ms)[0m  SELECT "domains".* FROM "domains"
+  Rendered domains/index.html.erb within layouts/application (44.8ms)
+Completed 200 OK in 179ms (Views: 104.3ms | ActiveRecord: 43.1ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:11 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:11 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:11 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:11 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:11 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:11 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:11 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:11 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:11 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:11 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:11 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:11 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:11 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:11 +0530
+
+
+Started GET "/search_engines" for 127.0.0.1 at 2014-11-06 09:01:17 +0530
+Processing by SearchEnginesController#index as HTML
+  [1m[36mSearchEngine Load (0.6ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered search_engines/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 98ms (Views: 96.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:18 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:18 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:18 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:18 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:18 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:18 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:18 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:18 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:18 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:18 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:18 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:18 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:18 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:18 +0530
+
+
+Started GET "/search_engines/new" for 127.0.0.1 at 2014-11-06 09:01:20 +0530
+Processing by SearchEnginesController#new as HTML
+  Rendered search_engines/_form.html.erb (77.4ms)
+  Rendered search_engines/new.html.erb within layouts/application (96.4ms)
+Completed 200 OK in 214ms (Views: 212.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/search_engines" for 127.0.0.1 at 2014-11-06 09:01:59 +0530
+Processing by SearchEnginesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D38ItxLeL/+YrqNae+Pse4G1LvU/0n9MGFsdUS4gxYU=", "search_engine"=>{"engine"=>"https://www.google.co.uk/"}, "commit"=>"Create Search engine"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (9.3ms)[0m  [1mINSERT INTO "search_engines" ("created_at", "engine", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-11-06 03:31:59.406406"], ["engine", "https://www.google.co.uk/"], ["updated_at", "2014-11-06 03:31:59.406406"]]
+  [1m[35m (19.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/search_engines/2
+Completed 302 Found in 140ms (ActiveRecord: 28.9ms)
+
+
+Started GET "/search_engines/2" for 127.0.0.1 at 2014-11-06 09:01:59 +0530
+Processing by SearchEnginesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT  "search_engines".* FROM "search_engines"  WHERE "search_engines"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered search_engines/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 67ms (Views: 62.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:59 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:59 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:59 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:59 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:59 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:59 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:01:59 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:59 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:59 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:59 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:59 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:59 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:59 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:01:59 +0530
+
+
+Started GET "/search_engines/2" for 127.0.0.1 at 2014-11-06 09:02:06 +0530
+Processing by SearchEnginesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSearchEngine Load (0.4ms)[0m  SELECT  "search_engines".* FROM "search_engines"  WHERE "search_engines"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered search_engines/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 59ms (Views: 57.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:06 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:06 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:06 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:06 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:06 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:06 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:06 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:06 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:06 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:06 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:06 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:06 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:06 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:06 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 09:02:09 +0530
+Processing by DashboardController#index as HTML
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 60ms (Views: 58.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:09 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:09 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:09 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:09 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:09 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:09 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:09 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:09 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:09 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:09 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:09 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:09 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:09 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:09 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=hot+deals&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.uk%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:02:19 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"hot deals", "domain"=>"desidime.com", "engine"=>"https://www.google.co.uk/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.7ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 1474ms (Views: 63.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:21 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:21 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:21 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:21 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:21 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:21 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:21 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:21 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:21 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:21 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:02:21 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:21 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:21 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:02:21 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=hot+deals&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.uk%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:06:21 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"hot deals", "domain"=>"desidime.com", "engine"=>"https://www.google.co.uk/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1893ms (Views: 54.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:06:23 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:06:23 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:06:23 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:06:23 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:06:23 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:06:23 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:06:23 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:06:23 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:06:23 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:06:23 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:06:23 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:06:23 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:06:23 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:06:23 +0530
+
+
+Started GET "/search_engines/new" for 127.0.0.1 at 2014-11-06 09:07:01 +0530
+Processing by SearchEnginesController#new as HTML
+  Rendered search_engines/_form.html.erb (1.9ms)
+  Rendered search_engines/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 65ms (Views: 63.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:01 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:01 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:01 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:01 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:01 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:01 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:01 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:01 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:01 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:01 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:01 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:01 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:01 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:01 +0530
+
+
+Started POST "/search_engines" for 127.0.0.1 at 2014-11-06 09:07:26 +0530
+Processing by SearchEnginesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D38ItxLeL/+YrqNae+Pse4G1LvU/0n9MGFsdUS4gxYU=", "search_engine"=>{"engine"=>"https://google.com/"}, "commit"=>"Create Search engine"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "search_engines" ("created_at", "engine", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-11-06 03:37:26.438537"], ["engine", "https://google.com/"], ["updated_at", "2014-11-06 03:37:26.438537"]]
+  [1m[35m (78.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/search_engines/3
+Completed 302 Found in 82ms (ActiveRecord: 79.2ms)
+
+
+Started GET "/search_engines/3" for 127.0.0.1 at 2014-11-06 09:07:26 +0530
+Processing by SearchEnginesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT  "search_engines".* FROM "search_engines"  WHERE "search_engines"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered search_engines/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 59ms (Views: 57.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:26 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:26 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:26 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:26 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:26 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:26 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:26 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:26 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:26 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:26 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:26 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:26 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:26 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:26 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 09:07:30 +0530
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (0.3ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 62ms (Views: 60.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:30 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:30 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:30 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:30 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:30 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:30 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:30 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:30 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:30 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:30 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:30 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:30 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:30 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:30 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=hot+deals&domain=desidime.com&engine=https%3A%2F%2Fgoogle.com%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:07:43 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"hot deals", "domain"=>"desidime.com", "engine"=>"https://google.com/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3921ms (Views: 51.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:47 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:47 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:47 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:47 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:47 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:47 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:47 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:47 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:47 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:47 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:07:47 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:47 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:47 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:07:47 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=jabong+deals&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:22:27 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"jabong deals", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.5ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 1981ms (Views: 55.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:22:29 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:22:29 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:22:29 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:22:29 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:22:29 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:22:29 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:22:29 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:22:29 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:22:29 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:22:29 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:22:29 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:22:29 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:22:29 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:22:29 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=jabong+coupons&domain=desidime.com&engine=&commit=submit" for 127.0.0.1 at 2014-11-06 09:22:40 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"jabong coupons", "domain"=>"desidime.com", "engine"=>"", "commit"=>"submit"}
+Completed 500 Internal Server Error in 2ms
+
+ArgumentError (absolute URL needed (not /search?num=100&q=jabong+coupons)):
+  app/services/v1/googler/scrap.rb:28:in `get_keyword_position_on_100_result'
+  app/controllers/dashboard_controller.rb:6:in `index'
+
+
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/mothirajha/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.8ms)
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=jabong+coupons&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:22:54 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"jabong coupons", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1825ms (Views: 68.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:22:55 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:22:55 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:22:55 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:22:55 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:22:55 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:22:55 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:22:55 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:22:56 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:22:56 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:22:56 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:22:56 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:22:56 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:22:56 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:22:56 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=amazon.in+coupons&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:23:18 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"amazon.in coupons", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.6ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 1817ms (Views: 67.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:23:20 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:23:20 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:23:20 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:23:20 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:23:20 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:23:20 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:23:20 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:23:20 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:23:20 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:23:20 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:23:20 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:23:20 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:23:20 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:23:20 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=laptop+under+45000&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:24:05 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"laptop under 45000", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.6ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 2222ms (Views: 59.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:08 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:08 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:08 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:08 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:08 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:08 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:08 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:08 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:08 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:08 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:08 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:08 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:08 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:08 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=laptop+under+45&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:24:27 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"laptop under 45", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.6ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 1536ms (Views: 61.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:28 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:28 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:28 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:28 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:28 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:28 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:28 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:28 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:28 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:28 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:28 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:28 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:28 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:28 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=laptop+under+45k&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:24:45 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"laptop under 45k", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1402ms (Views: 55.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:47 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:47 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:47 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:47 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:47 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:47 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:47 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:24:47 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:47 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:47 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:47 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:47 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:47 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:24:47 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=Price+Compare&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:25:06 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"Price Compare", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.5ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1634ms (Views: 62.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:08 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:08 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:08 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:08 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:08 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:08 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:08 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:08 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:08 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:08 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:08 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:08 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:08 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:08 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=Price+Compare+tablets&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:25:23 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"Price Compare tablets", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 1566ms (Views: 62.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:25 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:25 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:25 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:25 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:25 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:25 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:25 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:25 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:25 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:25 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:25 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:25 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:25 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:25 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=Price+Compare+hard+disk&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:25:39 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"Price Compare hard disk", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.4ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1837ms (Views: 62.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:41 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:41 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:41 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:41 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:41 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:41 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:25:41 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:41 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:41 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:41 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:41 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:41 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:41 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:25:41 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=moto+g+price+compare&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:26:05 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"moto g price compare", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 1897ms (Views: 51.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:07 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:07 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:07 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:07 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:07 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:07 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:07 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:07 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:07 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:07 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:07 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:07 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:07 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:07 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=nokia+lumia+price+compare&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:26:22 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"nokia lumia price compare", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.6ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 2317ms (Views: 57.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:25 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:25 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:25 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:25 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:25 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:25 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:25 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:25 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:25 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:25 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:25 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:25 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:25 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:25 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=samsung+mobile+price+compare&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:26:44 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"samsung mobile price compare", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3150ms (Views: 48.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:47 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:47 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:47 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:47 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:47 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:26:47 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:47 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:47 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:47 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:47 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:47 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:47 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:47 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:26:47 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=home+and+business+broadband&domain=megawire.ca&engine=https%3A%2F%2Fgoogle.com%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:27:42 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"home and business broadband", "domain"=>"megawire.ca", "engine"=>"https://google.com/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.6ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 2733ms (Views: 57.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:27:45 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:27:45 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:27:45 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:27:45 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:27:45 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:27:45 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:27:45 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:27:45 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:27:45 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:27:45 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:27:45 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:27:45 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:27:45 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:27:45 +0530
+
+
+Started GET "/search_engines" for 127.0.0.1 at 2014-11-06 09:28:59 +0530
+Processing by SearchEnginesController#index as HTML
+  [1m[36mSearchEngine Load (0.4ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered search_engines/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 61ms (Views: 60.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:28:59 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:28:59 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:28:59 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:28:59 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:28:59 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:28:59 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:28:59 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:28:59 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:28:59 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:28:59 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:28:59 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:28:59 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:28:59 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:28:59 +0530
+
+
+Started GET "/search_engines/new" for 127.0.0.1 at 2014-11-06 09:29:01 +0530
+Processing by SearchEnginesController#new as HTML
+  Rendered search_engines/_form.html.erb (1.5ms)
+  Rendered search_engines/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 59ms (Views: 58.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/search_engines" for 127.0.0.1 at 2014-11-06 09:29:12 +0530
+Processing by SearchEnginesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D38ItxLeL/+YrqNae+Pse4G1LvU/0n9MGFsdUS4gxYU=", "search_engine"=>{"engine"=>"https://www.google.ca/"}, "commit"=>"Create Search engine"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "search_engines" ("created_at", "engine", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-11-06 03:59:12.154136"], ["engine", "https://www.google.ca/"], ["updated_at", "2014-11-06 03:59:12.154136"]]
+  [1m[35m (36.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/search_engines/4
+Completed 302 Found in 40ms (ActiveRecord: 37.6ms)
+
+
+Started GET "/search_engines/4" for 127.0.0.1 at 2014-11-06 09:29:12 +0530
+Processing by SearchEnginesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSearchEngine Load (0.4ms)[0m  [1mSELECT  "search_engines".* FROM "search_engines"  WHERE "search_engines"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered search_engines/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 56ms (Views: 53.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:12 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:12 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:12 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:12 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:12 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:12 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:12 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:12 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:12 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:12 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:12 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:12 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:12 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:12 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 09:29:16 +0530
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (0.5ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 62ms (Views: 60.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:16 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:16 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:16 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:16 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:16 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:16 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:16 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:16 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:16 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:16 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:16 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:16 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:16 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:16 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=home+and+business+broadband&domain=megawire.ca&engine=https%3A%2F%2Fwww.google.ca%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:29:32 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"home and business broadband", "domain"=>"megawire.ca", "engine"=>"https://www.google.ca/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.6ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 3614ms (Views: 72.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:36 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:36 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:36 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:36 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:36 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:36 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:36 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:36 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:29:36 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:36 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:36 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:36 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:36 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:29:36 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 09:57:38 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[35mSearchEngine Load (0.9ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 103ms (Views: 91.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:57:38 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:57:38 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:57:38 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:57:38 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:57:38 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:57:38 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:57:38 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:57:38 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:57:38 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:57:38 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:57:38 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:57:38 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:57:38 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:57:38 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=hot+deals&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:57:49 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"hot deals", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 1405ms (Views: 51.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:57:50 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:57:50 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:57:50 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:57:51 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:57:51 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:57:51 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:57:51 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:57:51 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:57:51 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:57:51 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:57:51 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:57:51 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:57:51 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:57:51 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=amazon.in+deals&domain=desidime.com&engine=https%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:58:06 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"amazon.in deals", "domain"=>"desidime.com", "engine"=>"https://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.5ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered dashboard/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1484ms (Views: 46.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:58:08 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:58:08 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:58:08 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:58:08 +0530
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:58:08 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:58:08 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:08 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:08 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:08 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:08 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:08 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:08 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:08 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:08 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=amazon.in+deals&domain=desidime.com&engine=https%3A%2F%2Fgoogle.com%2F&commit=submit" for 127.0.0.1 at 2014-11-06 09:58:24 +0530
+Processing by DashboardController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"amazon.in deals", "domain"=>"desidime.com", "engine"=>"https://google.com/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.6ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered dashboard/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 2709ms (Views: 55.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/domains.css?body=1" for 127.0.0.1 at 2014-11-06 09:58:27 +0530
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2014-11-06 09:58:27 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-11-06 09:58:27 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-11-06 09:58:27 +0530
+
+
+Started GET "/assets/search_engines.css?body=1" for 127.0.0.1 at 2014-11-06 09:58:27 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 09:58:27 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:27 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:27 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:27 +0530
+
+
+Started GET "/assets/dashboard.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:27 +0530
+
+
+Started GET "/assets/domains.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:27 +0530
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:27 +0530
+
+
+Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:27 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:27 +0530
