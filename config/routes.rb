@@ -3,14 +3,14 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root 'dashboard#user', as: :authenticated_root
+      root 'dashboard#user_dashboard', as: :authenticated_root
     end
     unauthenticated :user do
       root 'dashboard#index', as: :unauthenticated_root
     end
   end
 
-    devise_for :users
+    devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
     resources :keywords
 
     resources :domains
