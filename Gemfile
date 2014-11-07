@@ -43,3 +43,4 @@ gem 'mechanize'
 #
 gem 'pry'
 gem 'domainatrix'
+gem 'devise'

@@ -29,6 +29,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.7)
     builder (3.2.2)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -38,6 +39,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    devise (3.2.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     domain_name (0.5.22)
       unf (>= 0.0.5, < 1.0.0)
     domainatrix (0.0.11)
@@ -76,6 +83,7 @@ GEM
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
     ntlm-http (0.1.1)
+    orm_adapter (0.5.0)
     pg (0.17.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -135,6 +143,8 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.6)
+    warden (1.2.3)
+      rack (>= 1.0)
     webrobots (0.1.1)
 
 PLATFORMS
@@ -142,6 +152,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  devise
   domainatrix
   jbuilder (~> 2.0)
   jquery-rails

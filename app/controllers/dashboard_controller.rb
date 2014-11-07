@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
-
+  before_action :authenticate_user!, except: :index 
    def index
     if params[:keyword]
       module_obj = V1::Googler::Scrap.new params[:engine], params[:domain], params[:keyword]
@@ -9,4 +9,8 @@ class DashboardController < ApplicationController
       @search_engines = SearchEngine.all
     end
   end
+
+   def user
+
+   end
 end

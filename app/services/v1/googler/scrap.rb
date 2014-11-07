@@ -63,7 +63,11 @@ module V1::Googler
     end
 
     def calculate_page(position)
-      position/10 + 1
+      if position%10 == 0
+        position/10
+      else
+        position/10 + 1
+      end
     end
   end
 end
