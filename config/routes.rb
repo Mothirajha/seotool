@@ -1,21 +1,26 @@
 Rails.application.routes.draw do
 
 
+  resources :queries
+
+  resources :campaigns
+
   devise_scope :user do
     authenticated :user do
-      root 'dashboard#user_dashboard', as: :authenticated_root
+      root 'dashboard#show', as: :authenticated_root
     end
     unauthenticated :user do
-      root 'dashboard#index', as: :unauthenticated_root
+      root 'home#show', as: :unauthenticated_root
     end
   end
 
     devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
-    resources :keywords
-
     resources :domains
 
+    resources :campaings
+
     resources :search_engines
+
     #root to: "dashboard#index"
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".

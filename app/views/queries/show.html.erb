@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Keyword:</strong>
+  <%= @query.keyword %>
+</p>
+
+<p>
+  <strong>Campaign:</strong>
+  <%= @query.campaign %>
+</p>
+
+<p>
+  <strong>Search engine:</strong>
+  <%= @query.search_engine %>
+</p>
+
+<%= link_to 'Edit', edit_query_path(@query) %> |
+<%= link_to 'Back', queries_path %>

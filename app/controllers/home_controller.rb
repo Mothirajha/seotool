@@ -1,6 +1,6 @@
-class DashboardController < ApplicationController
-  before_action :authenticate_user!
-  require "#{Rails.root}/lib/modules/pre_crawler" 
+class HomeController < ApplicationController
+
+  require "#{Rails.root}/lib/modules/pre_crawler"
   extend PreCrawler
 
   def show
@@ -8,7 +8,6 @@ class DashboardController < ApplicationController
   end
 
   private
-
   def get_crawler_obj engine, domain, keyword
     V1::Googler::Scrap.new engine, domain, keyword
   end
@@ -30,4 +29,5 @@ class DashboardController < ApplicationController
   def get_search_engine
     SearchEngine.all
   end
+
 end

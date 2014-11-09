@@ -1,0 +1,36 @@
+<h1>SEO Tool to find Search Position</h1>
+
+<%= link_to "<button>Sign In</button>".html_safe, new_user_session_path%>
+<%= link_to "<button>Sign Up</button>".html_safe, new_user_registration_path%>
+<%= form_tag unauthenticated_root_path, method: :get do %> 
+  <%= text_field_tag :keyword, params[:keyword], placeholder: "Keyword..." %>
+  <%= text_field_tag :domain, params[:domain], placeholder: "Domain name ..." %>
+  <%= select_tag "engine", options_for_select(@search_engines.map(&:engine), "engine") , prompt: "Select search engine" %>
+  <%= submit_tag "submit"%> 
+<%end%>
+
+<%if @result.present? %>
+  <table>
+    <thead>
+      <tr>
+      <th>Sl.No</th>
+      <th>Domain</th>
+      <th>Search Engine</th>
+      <th>Page Number</th>
+      <th>Position</th>
+      <th>Url</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @result.each do |result| %>
+    <tr> <td>1</td>
+      <td><%= result["domain"] %></td> 
+      <td><%= result["search_engine"] %></td> 
+      <td><%= result["page_number"] %></td>
+      <td><%= result["position"] %></td>>
+      <td><%= result["url"] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%end%>

@@ -1,0 +1,14 @@
+<h1>Welcome to SEOTool Keyword Position</h1>
+
+<%= link_to "<button>Sign out</button>".html_safe, destroy_user_session_path, method: :delete%>
+
+<%= form_tag authenticated_root_path, method: :get do %> 
+  <%= text_field_tag :keyword, params[:keyword], placeholder: "Keyword..." %>
+  <%= text_field_tag :domain, params[:domain], placeholder: "Domain name ..." %>
+  <%= select_tag "engine", options_for_select(@search_engines.map(&:engine), "engine") , prompt: "Select search engine" %>
+  <%= submit_tag "submit"%> 
+<%end%>
+
+<%if @result.present? %>
+  <%= @result %>
+<%end%>

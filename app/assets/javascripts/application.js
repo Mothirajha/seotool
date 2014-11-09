@@ -14,3 +14,31 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function prepSelect(sourObj,destSel,hit,query)
+{ 
+  var itemId = sourObj.options[sourObj.selectedIndex].value;
+  var urlTo = hit + itemId;
+  selectUpdate(itemId,urlTo,destSel,query);
+}
+
+function selectUpdate(itemId,urlTo,destSel,query){
+  if (itemId.length != 0){
+
+    $(destSel).fadeOut(1000);
+    $.ajax({
+      url: urlTo,
+      type: 'GET',
+      dataType: "JSON",
+      success: function( json ) {
+        if (json == "") {  alert("No Data is configured"); }
+        $(destSel).empty();
+        $(destSel).append('<option value= selected="selected">-choose-</option>');
+        $.each(json, function(i,value) {
+          $(destSel).append($('<option>').text(eval("value." + query)).attr('value', value.id));
+        });
+      }
+    });
+    $(destSel).fadeIn(1000);
+  }
+}
