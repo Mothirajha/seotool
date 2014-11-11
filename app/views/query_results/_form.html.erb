@@ -1,0 +1,33 @@
+<%= form_for(@query_result) do |f| %>
+  <% if @query_result.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@query_result.errors.count, "error") %> prohibited this query_result from being saved:</h2>
+
+      <ul>
+      <% @query_result.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :query_id %><br>
+    <%= f.text_field :query_id %>
+  </div>
+  <div class="field">
+    <%= f.label :position %><br>
+    <%= f.number_field :position %>
+  </div>
+  <div class="field">
+    <%= f.label :previous_position %><br>
+    <%= f.number_field :previous_position %>
+  </div>
+  <div class="field">
+    <%= f.label :last_updated %><br>
+    <%= f.datetime_select :last_updated %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

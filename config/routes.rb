@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :query_results
+
   resources :queries
 
   resources :campaigns

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><%= content_for?(:title) ? yield(:title) : "Seotool" %></title>
+<%= csrf_meta_tags %>
+<%= stylesheet_link_tag "admin", :media => "all", "data-turbolinks-track" => true %> 
+<%= javascript_include_tag "admin", "data-turbolinks-track" => false %>
+</head>
+<body>
+<body>
+
+<div class="navbar navbar-fixed-top">
+
+  <div class="navbar-inner">
+
+    <div class="container">
+
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <a class="brand" href="/">
+        SEOTOOL
+      </a>    
+
+      <div class="nav-collapse">
+        <ul class="nav pull-right">
+
+          <li class="">
+          <a href="/" class="">
+            <i class="icon-chevron-left"></i>
+            Back to Homepage
+          </a>
+
+          </li>
+        </ul>
+
+      </div><!--/.nav-collapse -->
+
+    </div> <!-- /container -->
+
+  </div> <!-- /navbar-inner -->
+
+</div> <!-- /navbar -->
+
+<div class="account-container">
+
+  <div class="content clearfix">
+    <%= bootstrap_flash %>
+    <%= yield %>
+
+
+  </div> <!-- /content -->
+
+</div> <!-- /account-container -->
+
+<%= render "footer" %>
+</body>
+</html>
+

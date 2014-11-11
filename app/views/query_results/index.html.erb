@@ -1,0 +1,31 @@
+<h1>Listing query_results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Query</th>
+      <th>Position</th>
+      <th>Previous position</th>
+      <th>Last updated</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @query_results.each do |query_result| %>
+      <tr>
+        <td><%= query_result.query %></td>
+        <td><%= query_result.position %></td>
+        <td><%= query_result.previous_position %></td>
+        <td><%= query_result.last_updated %></td>
+        <td><%= link_to 'Show', query_result %></td>
+        <td><%= link_to 'Edit', edit_query_result_path(query_result) %></td>
+        <td><%= link_to 'Destroy', query_result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Query result', new_query_result_path %>

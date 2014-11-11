@@ -5,6 +5,7 @@ class DashboardController < ApplicationController
 
   def show
     load_variables
+    @domains = Domain.all
   end
 
   private

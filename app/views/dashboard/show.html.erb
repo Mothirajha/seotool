@@ -1,6 +1,6 @@
 <h1>Welcome to SEOTool Keyword Position</h1>
 
-<%= link_to "<button>Sign out</button>".html_safe, destroy_user_session_path, method: :delete%>
+
 
 <%= form_tag authenticated_root_path, method: :get do %> 
   <%= text_field_tag :keyword, params[:keyword], placeholder: "Keyword..." %>
@@ -12,3 +12,4 @@
 <%if @result.present? %>
   <%= @result %>
 <%end%>
+
