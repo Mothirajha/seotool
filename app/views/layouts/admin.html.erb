@@ -16,7 +16,18 @@
 <% if user_signed_in? %>
   <%= render "tabs" %>
 <%end%>
-<%= yield %>
+<div class="main">
+    <div class="main-inner">
+      <div class="container">
+        <div class="row">
+          <div class="span6">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <%= render "footer" %>
 
 </body>

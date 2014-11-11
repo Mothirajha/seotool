@@ -4,7 +4,7 @@
 
 <%= form_tag authenticated_root_path, method: :get do %> 
   <%= text_field_tag :keyword, params[:keyword], placeholder: "Keyword..." %>
-  <%= text_field_tag :domain, params[:domain], placeholder: "Domain name ..." %>
+  <%= select_tag "domain", options_for_select(@domains.map(&:name), "id"),  prompt: "Select domain" %>
   <%= select_tag "engine", options_for_select(@search_engines.map(&:engine), "engine") , prompt: "Select search engine" %>
   <%= submit_tag "submit"%> 
 <%end%>

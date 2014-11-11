@@ -13,5 +13,6 @@
  *= require admin_css/base-admin-responsive.css
  *= require admin_css/bootstrap.css
  *= require admin_css/style.css
-
+ *= require admin_css/bootstrap-responsive.min.css
+ *= require admin_css/bootstrap.min.css
  */

@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require turbolinks
 //= require admin/base.js
 //= require admin/bootstrap.js
 //= require admin/signin.js

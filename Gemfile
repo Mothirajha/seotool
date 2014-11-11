@@ -39,11 +39,9 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 # Used to crawl website
 gem 'mechanize'
-
-#
-gem 'pry'
-gem 'domainatrix'
-gem 'devise'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+gem 'pry'
+gem 'domainatrix'
+gem 'devise'

@@ -4,3 +4,6 @@
 
 # Ignore bundler config.
 /.bundle
+
+**.orig
+/db/schema.rb
