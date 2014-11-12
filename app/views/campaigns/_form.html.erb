@@ -16,8 +16,8 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :domain_id %><br>
-    <%= f.text_field :domain_id %>
+    <%= f.label :domain %><br>
+    <%= f.select :domain_id, Domain.all.collect{|d| [d.name, d.id]}, prompt: "Select Domain" %>
   </div>
   <div class="actions">
     <%= f.submit %>

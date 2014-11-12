@@ -14,7 +14,6 @@ module V1::Googler
     end
 
     def get_keyword_position
-      binding.pry
       get_google_form
       get_first_result_page
       parser_result = parser(@result_page)

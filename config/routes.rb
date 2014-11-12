@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :query_results
 
   resources :queries
+  match 'get_query', to: 'queries#add_or_update', via: [:post]
 
   resources :campaigns
 

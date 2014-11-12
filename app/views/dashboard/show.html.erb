@@ -2,14 +2,19 @@
 
 
 
-<%= form_tag authenticated_root_path, method: :get do %> 
-  <%= text_field_tag :keyword, params[:keyword], placeholder: "Keyword..." %>
-  <%= select_tag "domain", options_for_select(@domains.map(&:name), "id"),  prompt: "Select domain" %>
-  <%= select_tag "engine", options_for_select(@search_engines.map(&:engine), "engine") , prompt: "Select search engine" %>
+<%= form_tag get_query_path, method: :post do  %> 
+  <%= text_field_tag :keyword, params[:keyword], placeholder: "Keyword...", required: true %>
+  <%= select_tag "campaign_id", options_from_collection_for_select(@campaigns, "id", "name"),  prompt: "---Select campaign---" %>
+  <%= select_tag "search_engine_id", options_from_collection_for_select(@search_engines, "id","engine")  %>
   <%= submit_tag "submit"%> 
 <%end%>
 
-<%if @result.present? %>
-  <%= @result %>
+<%if @queries.present? %>
+  <% @queries.each do |query| %>
+    <%= query.keyword %> </br>
+    <%= query.search_engine.engine %> </br>
+    <%= query.query_result.position %> </br>
+    <%= query.query_result.previous_position %> </br>
+    
+  <%end%>
 <%end%>
-

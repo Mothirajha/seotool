@@ -1,4 +1,7 @@
 class QueriesController < ApplicationController
+
+  require "#{Rails.root}/lib/modules/pre_crawler"
+  extend PreCrawler
   before_action :set_query, only: [:show, :edit, :update, :destroy]
 
   # GET /queries
@@ -50,7 +53,18 @@ class QueriesController < ApplicationController
       end
     end
   end
-
+ 
+  def add_or_update
+    crawler_engine = PreCrawler.select_crawler(params[:search_engine_id])
+    crawler = crawler_engine[0]
+    engine = crawler_engine[1]
+    keywords = PreCrawler.get_keywords(params[:keyword])
+    domain = PreCrawler.get_domain(params[:campaign_id])
+    queries = get_query(keywords, params[:campaign_id], params[:search_engine_id])
+    result = PreCrawler.get_positions(crawler, domain, queries, engine)
+    QueryResult.insert_or_update_data(result)
+    redirect_to authenticated_root_path
+  end
   # DELETE /queries/1
   # DELETE /queries/1.json
   def destroy
@@ -70,5 +84,18 @@ class QueriesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def query_params
       params.require(:query).permit(:keyword, :campaign_id, :search_engine_id)
+    end
+
+    def get_query keywords, campaign_id, search_engine_id
+      queries = []
+      keywords.each do |keyword|
+        queries << Query.find_or_create_by(keyword: keyword.strip, campaign_id: campaign_id, search_engine_id: search_engine_id )      
+      end
+      queries
+    end
+
+
+    def get_search_engine search_engine_id
+      SearchEngine.find search_engine_id
     end
 end
