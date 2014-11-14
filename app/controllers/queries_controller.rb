@@ -8,6 +8,13 @@ class QueriesController < ApplicationController
   # GET /queries.json
   def index
     @queries = Query.all
+    respond_to do |format|
+      if @queries
+        format.html
+        format.csv {send_data @queries.to_csv}
+        format.xls { send_data @queries.to_csv(col_sep: "\t") }
+      end
+    end
   end
 
   # GET /queries/1

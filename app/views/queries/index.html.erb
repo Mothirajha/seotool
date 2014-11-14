@@ -14,8 +14,8 @@
     <% @queries.each do |query| %>
       <tr>
         <td><%= query.keyword %></td>
-        <td><%= query.campaign %></td>
-        <td><%= query.search_engine %></td>
+        <td><%= query.campaign.name %></td>
+        <td><%= query.search_engine.engine %></td>
         <td><%= link_to 'Show', query %></td>
         <td><%= link_to 'Edit', edit_query_path(query) %></td>
         <td><%= link_to 'Destroy', query, method: :delete, data: { confirm: 'Are you sure?' } %></td>
