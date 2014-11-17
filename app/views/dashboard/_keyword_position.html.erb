@@ -1,0 +1,26 @@
+<table id="position">
+  <thead>
+    <tr>
+      <th>Sl No</th>
+      <th>Keyword</th>
+      <th>Engine</th>
+      <th>Position</th>
+      <th>Previous Position</th>
+      <th>Last Updated at </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% queries.each do |query| %>
+      <tr>
+        <td> <%= query.id %></td>
+        <td> <%= query.keyword %>  </td>
+        <td> <%= query.search_engine.engine %> </td>
+          <% if query.query_result.present? %>
+            <td> <%= query.query_result.position %> </td>
+            <td> <%= query.query_result.previous_position %></td>
+            <td> <%= query.query_result.last_updated.strftime("%d %b %Y") %></td>
+          <%end%>
+        </tr>
+    <%end%>
+  </tbody>
+</table>
