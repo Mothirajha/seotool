@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><%= content_for?(:title) ? yield(:title) : "Seotool" %></title>
 <%= csrf_meta_tags %> 
-<%= stylesheet_link_tag "admin", :media => "all", "data-turbolinks-track" => true %> 
-<%= javascript_include_tag "admin", "data-turbolinks-track" => false %>
+<%= stylesheet_link_tag "admin", :media => "all" %> 
+<%= javascript_include_tag "admin" %>
 </head>
 <body>
 
@@ -19,7 +19,7 @@
   <div class="main-inner">
     <div class="container">
       <div class="row">
-        <div class="span6">
+        <div class="span8">
           <%= yield %>
         </div>
       </div>

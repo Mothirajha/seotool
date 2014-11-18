@@ -96,7 +96,7 @@ class QueriesController < ApplicationController
     def get_query keywords, campaign_id, search_engine_id
       queries = []
       keywords.each do |keyword|
-        queries << Query.find_or_create_by(keyword: keyword.strip, campaign_id: campaign_id, search_engine_id: search_engine_id )      
+        queries << Query.find_or_create_by(keyword: keyword.downcase.strip, campaign_id: campaign_id, search_engine_id: search_engine_id )      
       end
       queries
     end

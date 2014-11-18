@@ -14,5 +14,13 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require admin/base.js
-//= require admin/bootstrap.js
+//= require jquery.dataTables.min.js
 //= require admin/signin.js
+
+$(function(){
+	$('#queries').dataTable({"columnDefs": [ { "targets": 3, "orderable": false } ]});
+});
+
+$(function(){
+	$('#position').dataTable();
+});
