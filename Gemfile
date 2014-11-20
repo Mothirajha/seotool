@@ -41,9 +41,13 @@ gem 'domainatrix'
 gem 'devise'
 gem 'queue_classic'
 gem 'jquery-ui-rails'
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
 group :development do
     #gem 'virb'
     gem 'pry'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
     gem 'spring'
+    gem 'mina'
 end
