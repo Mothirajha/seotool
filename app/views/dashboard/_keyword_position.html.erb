@@ -4,6 +4,8 @@
       <th>Sl No</th>
       <th>Keyword</th>
       <th>Engine</th>
+      <th>Domain</th>
+      <th>Campaign</th>
       <th>Position</th>
       <th>Previous Position</th>
       <th>Last Updated at </th>
@@ -15,6 +17,8 @@
         <td> <%= query.id %></td>
         <td> <%= query.keyword %>  </td>
         <td> <%= query.search_engine.engine %> </td>
+        <td> <%= query.campaign.domain.name %> </td>
+        <td> <%= query.campaign.name %> </td>
           <% if query.query_result.present? %>
             <td> <%= query.query_result.position %> </td>
             <td> <%= query.query_result.previous_position %></td>

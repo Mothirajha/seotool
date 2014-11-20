@@ -1,5 +1,7 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
 
+mount Sidekiq::Web, at: '/sidekiq'
 
   resources :query_results
 
@@ -23,6 +25,8 @@ Rails.application.routes.draw do
     resources :campaings
 
     resources :search_engines
+
+    match 'get_campaigns/:domain_id' => 'ajax_json#get_campaigns',  via: :get
 
     #root to: "dashboard#index"
     # The priority is based upon order of creation: first created -> highest priority.

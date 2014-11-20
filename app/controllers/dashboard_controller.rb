@@ -7,6 +7,8 @@ class DashboardController < ApplicationController
     load_variables
     @campaigns = Campaign.all
     @queries = Query.all
+    @domains = Domain.all
+    @query = Query.new
   end
 
   private

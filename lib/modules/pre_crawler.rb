@@ -24,22 +24,4 @@ module PreCrawler
     Domainatrix.parse(url).domain
   end
 
-  def self.get_crawler_obj crawler, domain, keyword, engine
-    version = "v1"
-    require "#{Rails.root}/app/services/#{version}/#{crawler.downcase}"
-    object = Object.const_get "V1::#{crawler}::Scrap"
-    object.new(engine, domain, keyword)
-  end
-
-  def self.get_positions crawler, domain, queries, engine
-    result = {}
-    queries.each do |query|
-      keyword = query.keyword
-      scrap_obj = PreCrawler.get_crawler_obj(crawler, domain, keyword, engine)
-      result[query.id] = scrap_obj.get_keyword_position_on_100_result
-    end
-    result
-  end
-
-
 end

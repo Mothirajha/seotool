@@ -2,6 +2,7 @@ class QueriesController < ApplicationController
 
   require "#{Rails.root}/lib/modules/pre_crawler"
   extend PreCrawler
+
   before_action :set_query, only: [:show, :edit, :update, :destroy]
 
   # GET /queries
@@ -62,14 +63,16 @@ class QueriesController < ApplicationController
   end
  
   def add_or_update
+
+    params = query_params
     crawler_engine = PreCrawler.select_crawler(params[:search_engine_id])
     crawler = crawler_engine[0]
     engine = crawler_engine[1]
     keywords = PreCrawler.get_keywords(params[:keyword])
     domain = PreCrawler.get_domain(params[:campaign_id])
-    queries = get_query(keywords, params[:campaign_id], params[:search_engine_id])
-    result = PreCrawler.get_positions(crawler, domain, queries, engine)
-    QueryResult.insert_or_update_data(result)
+    query_ids = get_query(keywords, params[:campaign_id], params[:search_engine_id])
+    #FindPositionAdapter(crawler, domain, query_ids, engine)
+    FindPosition.break_keywords(crawler, domain, query_ids, engine)
     redirect_to authenticated_root_path
   end
   # DELETE /queries/1
@@ -93,12 +96,13 @@ class QueriesController < ApplicationController
       params.require(:query).permit(:keyword, :campaign_id, :search_engine_id)
     end
 
+
     def get_query keywords, campaign_id, search_engine_id
-      queries = []
+      query_ids = []
       keywords.each do |keyword|
-        queries << Query.find_or_create_by(keyword: keyword.downcase.strip, campaign_id: campaign_id, search_engine_id: search_engine_id )      
+        query_ids << Query.find_or_create_by(keyword: keyword.downcase.strip, campaign_id: campaign_id, search_engine_id: search_engine_id ).id
       end
-      queries
+      query_ids
     end
 
 

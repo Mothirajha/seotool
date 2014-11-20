@@ -1,10 +1,6 @@
-<%= form_tag get_query_path, method: :post do  %> 
-  <%= text_field_tag :keyword, params[:keyword], placeholder: "Keyword...", required: true %>
-  <%= select_tag "campaign_id", options_from_collection_for_select(@campaigns, "id", "name"),  prompt: "---Select campaign---" %>
-  <%= select_tag "search_engine_id", options_from_collection_for_select(@search_engines, "id","engine")  %>
-  <%= submit_tag "submit"%> 
-<%end%>
-<strong> Download AAss </strong>
+<%= render 'queries/form'%>
+
+<strong> Download As </strong>
 <%= link_to "CSV", queries_path(format: "csv") %> | 
 <%= link_to "XLS", queries_path(format: "xls") %>
 

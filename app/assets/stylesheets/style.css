@@ -10,7 +10,7 @@ Bootstrap Admin Template by EGrappler.com
 
 body {
 	background: #f9f6f1;
-	font: 13px/1.7em 'Open Sans';
+	font: 15px/1.7em 'Open Sans';
 }
     
 p { 
@@ -84,11 +84,12 @@ textarea {
 }
 
 .navbar .nav a {
-	font-size: 11px;
+	font-size: 13px;
 }
 .navbar .nav>li>a { color:#fff !important;}
 .navbar .brand {
-	font-weight: 600;
+	font-weight: bold;
+	font-size: 35px;
 	position: relative;
 	top: 2px;
 }
@@ -96,7 +97,7 @@ textarea {
 .navbar .search-query {
 	background-color: #444;
 	width: 150px;
-	font-size: 11px;
+	font-size: 12px;
 	font-weight: bold;
 }
 

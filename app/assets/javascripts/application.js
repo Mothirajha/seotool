@@ -12,9 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require twitter/bootstrap
+//= require jquery.dataTables.min.js
 //= require_tree .
 
+$(function(){
+  $('#queries').dataTable({"columnDefs": [ { "targets": 3, "orderable": false } ]});
+});
+
+$(function(){
+  $('#position').dataTable();
+});
 function prepSelect(sourObj,destSel,hit,query)
 { 
   var itemId = sourObj.options[sourObj.selectedIndex].value;
