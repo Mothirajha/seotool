@@ -7,7 +7,7 @@
   <%= submit_tag "submit"%> 
 <%end%>
 
-<%if @result.present? %>
+<% if @result.present? %>
   <table>
     <thead>
       <tr>
@@ -21,7 +21,7 @@
   </thead>
   <tbody>
   <% @result.each do |result| %>
-    <tr> <td>1</td>
+    <tr> 
       <td><%= result["domain"] %></td> 
       <td><%= result["search_engine"] %></td> 
       <td><%= result["page_number"] %></td>

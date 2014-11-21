@@ -47,6 +47,6 @@ function selectUpdate(itemId,urlTo,destSel,query){
         });
       }
     });
-    $(destSel).fadeIn(1000);
+    $(destSel).fadeIn(500);
   }
 }

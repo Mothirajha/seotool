@@ -1,4 +1,4 @@
-class FindPosition
+class FindPositionWorker
   include Sidekiq::Worker
   # sidekiq_options queue: "high"
   # sidekiq_options retry: false
@@ -12,7 +12,7 @@ class FindPosition
   	query_ids.each do |query_id|
   		query = Query.find query_id
   		keyword = query.keyword
-  		FindPosition.delay.get_position(crawler, domain, keyword, engine, query_id)
+  		FindPositionWorker.delay.get_position(crawler, domain, keyword, engine, query_id)
   	end
   end
 

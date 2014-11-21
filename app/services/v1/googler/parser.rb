@@ -11,17 +11,21 @@ module V1::Googler
       google_attributes = V1::Googler::GOOGLE_ATTRIBUTES
       count = 0
       result_page.search(google_attributes["resultant_row"]).each do |result|
-        google_aff_link = result.at(google_attributes["link"]).attr(google_attributes["attr"])
-        url = clean(google_aff_link)
-        if uri?(url)
-          count = count + 1
-          google_page_domain = get_domain(url)
-          if google_page_domain == domain
-            parser_result = {}
-            parser_result['url'] = url
-            parser_result['position'] = count
-            return parser_result
+        if result.at(google_attributes["link"]).present?
+          google_aff_link = result.at(google_attributes["link"]).attr(google_attributes["attr"])
+          url = clean(google_aff_link)
+          if uri?(url)
+            count = count + 1
+            google_page_domain = get_domain(url)
+            if google_page_domain == domain
+              parser_result = {}
+              parser_result['url'] = url
+              parser_result['position'] = count
+              return parser_result
+            end
           end
+        else
+          next
         end
       end
     end

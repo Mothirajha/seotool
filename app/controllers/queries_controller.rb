@@ -71,9 +71,8 @@ class QueriesController < ApplicationController
     keywords = PreCrawler.get_keywords(params[:keyword])
     domain = PreCrawler.get_domain(params[:campaign_id])
     query_ids = get_query(keywords, params[:campaign_id], params[:search_engine_id])
-    #FindPositionAdapter(crawler, domain, query_ids, engine)
-    FindPosition.break_keywords(crawler, domain, query_ids, engine)
-    redirect_to authenticated_root_path
+    FindPositionWorker.break_keywords(crawler, domain, query_ids, engine)
+    redirect_to authenticated_root_path, :flash   => { :success => "Your keywords will be finding its position very soon!!!" }
   end
   # DELETE /queries/1
   # DELETE /queries/1.json

@@ -1,4 +1,4 @@
-<table id="position" class='display'>
+<table id="position" class="display table-bordered table-striped">
   <thead>
     <tr>
       <th>Sl No</th>
@@ -23,6 +23,10 @@
             <td> <%= query.query_result.position %> </td>
             <td> <%= query.query_result.previous_position %></td>
             <td> <%= query.query_result.last_updated.strftime("%d %b %Y") %></td>
+          <% else %>
+            <td> - </td>
+            <td> - </td>
+            <td> - </td>
           <%end%>
         </tr>
     <%end%>
