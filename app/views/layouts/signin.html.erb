@@ -2,16 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
-        rel="stylesheet">
-        <meta name="apple-mobile-web-app-capable" content="yes">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><%= content_for?(:title) ? yield(:title) : "Seotool" %></title>
 <%= csrf_meta_tags %>
 <%= stylesheet_link_tag "application", :media => "all" %> 
 <%= javascript_include_tag "application" %>
- <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
 </head>
 <body>
 <body>
@@ -57,12 +55,9 @@
   <div class="content clearfix">
     <%= bootstrap_flash %>
     <%= yield %>
-
-
   </div> <!-- /content -->
 
 </div> <!-- /account-container -->
-
 
 </body>
 </html>

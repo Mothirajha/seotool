@@ -12,49 +12,42 @@
         </div>
       <% end %>
 
-
-      <div class="form-group">
-
-        <div class="row">
-          <div class="sapan2">
+      <div class="row">
+        <div class="form-group">
+          <div class="span2">
             <%= f.label :keyword, class: "col-sm-2 control-label" %>
           </div>
-          
-          <div class="span10">
-          <%= f.text_area :keyword, class: "form-control" %>
+          <div class="span2">
+            <%= f.text_area :keyword, class: "form-control" %>
+          </div>
         </div>
-      </div>
-      <br>
 
-        <div class="row">
-          <div class="sapan2">
+        <div class="form-group">
+          <div class="span2">
             <label class="col-sm-2 control-label">Domain</label>
           </div>
-          
-          <div class="span10">
-          <%= select_tag "domain_id", options_from_collection_for_select(@domains, "id", "name"), class: "form-control",  prompt: "---Select domain---", onchange: "prepSelect(this,'#query_campaign_id', '/get_campaigns/', 'name');" %>
+          <div class="span6">
+            <%= select_tag "domain_id", options_from_collection_for_select(@domains, "id", "name"), class: "form-control",  prompt: "---Select domain---", onchange: "prepSelect(this,'#query_campaign_id', '/get_campaigns/', 'name');" %>
+          </div>
         </div>
       </div>
       <br>
 
       <div class="row">
-        <div class="sapan2">
+        <div class="span2">
           <%= f.label :campaign_id, class: "control-label" %>
         </div>
-        
-        <div class="span10">
+        <div class="span2">
           <%= f.select "campaign_id", options_from_collection_for_select(@campaigns, "id", "name"), class: "form-control" %>
         </div>
-      </div>
-      <br>
-
-      <div class="row">
-        <div class="sapan2">
-          <%= f.label :search_engine_id, class: "control-label" %>
-        </div>
-        
-        <div class="span10">
-          <%= f.select "search_engine_id", options_from_collection_for_select(@search_engines, "id","engine"), class: "form-control" %>
+        <div class="form-group">          
+          <div class="span2">
+            <%= f.label :search_engine_id, class: "control-label" %>
+          </div>
+          
+          <div class="span6">
+            <%= f.select "search_engine_id", options_from_collection_for_select(@search_engines, "id","engine"), class: "form-control" %>
+          </div>
         </div>
       </div>
       <br>

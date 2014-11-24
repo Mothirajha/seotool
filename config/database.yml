@@ -83,5 +83,5 @@ test:
 production:
   <<: *default
   database: seotool_production
-  username: seotool
-  password: <%= ENV['SEOTOOL_DATABASE_PASSWORD'] %>
+  username: keyword_position
+  password: keyword
