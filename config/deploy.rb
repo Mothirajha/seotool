@@ -13,10 +13,10 @@ require 'mina_sidekiq/tasks'
 
 
 set :term_mode, nil # fix for password prompt
-# set :domain, '85.159.208.78'
+# set :domain, '178.79.133.9'
 set :deploy_to, '/home/deployer/apps/seotool'
 set :repository, 'https://github.com/Mothirajha/seotool.git'
-set :branch, 'master'
+set :branch, 'production'
 set :rails_env, 'production'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
