@@ -25,7 +25,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
+gem 'mina'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -49,5 +50,4 @@ group :development do
     gem 'pry'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
     gem 'spring'
-    gem 'mina'
 end

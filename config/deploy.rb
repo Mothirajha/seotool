@@ -51,8 +51,8 @@ task :setup => :environment do
 
   queue! %[touch "#{deploy_to}/shared/config/database.yml"]
   queue  %[echo "-----> Be sure to edit 'shared/config/database.yml'."]
-  queue! "sudo 'ln -nfs #{deploy_to}/config/unicorn_init.sh /etc/init.d/unicorn_linkisin'"
-  queue! "sudo 'ln -nfs #{deploy_to}/config/nginx.conf /opt/nginx/conf/nginx.conf'"
+  queue! "sudo ln -nfs #{deploy_to}/config/unicorn_init.sh /etc/init.d/unicorn_seotool"
+  queue! "sudo ln -nfs #{deploy_to}/config/nginx.conf /opt/nginx/conf/nginx.conf"
 
   # sidekiq needs a place to store its pid file and log file
   queue! %[mkdir -p "#{deploy_to}/shared/tmp/pids/"]
