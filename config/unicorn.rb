@@ -4,7 +4,7 @@ app_path = "/home/deployer/apps/seotool/current"
 worker_processes   2
 preload_app        true
 timeout            30
-listen             8080, :tcp_nopush => true
+listen             "/tmp/unicorn.seotool.sock"
 working_directory  app_path
 if Dir[app_path+"/tmp/pids"].empty?
 	`mkdir /home/deployer/apps/seotool/current/tmp/pids`
