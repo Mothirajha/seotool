@@ -1,15 +1,14 @@
 # https://raw.githubusercontent.com/defunkt/unicorn/master/examples/unicorn.conf.rb
-app_path = "/home/deployer/apps/seotool"
+app_path = "/home/deployer/apps/seotool/current"
  
 worker_processes   2
 preload_app        true
 timeout            30
-listen             "/home/deployer/.unicorn.sock", :backlog => 64
 listen             8080, :tcp_nopush => true
 working_directory  app_path
-pid                "#{app_path}/shared/tmp/pids/unicorn.pid"
-stderr_path        "#{app_path}/shared/log/unicorn.log"
-stdout_path        "#{app_path}/shared/log/unicorn.log"
+pid                "#{app_path}/tmp/pids/unicorn.pid"
+stderr_path        "#{app_path}/log/unicorn.log"
+stdout_path        "#{app_path}/log/unicorn.log"
  
 before_fork do |server, worker|
   ActiveRecord::Base.connection.disconnect!

@@ -16,7 +16,7 @@ set :deploy_to,       "/home/deployer/apps/seotool"
 set :app_path,        "#{deploy_to}/current"
  
 set :repository,      'https://github.com/Mothirajha/seotool.git'
-set :brach,           'production'
+set :branch,           'production'
  
 set :user,            'deployer'
 set :shared_paths,    ['config/database.yml', 'log' 'tmp']
@@ -73,7 +73,7 @@ end
 #                                                                       Unicorn
 # ==============================================================================
 namespace :unicorn do
-  set :unicorn_pid, "#{deploy_to}/shared/tmp/pids/unicorn.pid"
+  set :unicorn_pid, "#{app_path}/tmp/pids/unicorn.pid"
   set :start_unicorn, %{
     cd #{app_path}
     bundle exec unicorn -c #{app_path}/config/unicorn.rb -E #{rails_env} -D
