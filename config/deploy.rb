@@ -9,7 +9,7 @@ require 'mina_sidekiq/tasks'
 set :term_mode,       nil #Fix for password prompt
 set :rails_env,       'production'
  
-set :domain,          'xx.xx.xxx.xx'
+set :domain,          'xx.xxx.xx.xx'
 # set :port,            37894
  
 set :deploy_to,       "/home/deployer/apps/seotool"
@@ -45,7 +45,7 @@ task :setup do
   queue! %[touch "#{deploy_to}/shared/config/database.yml"]
   queue  %[echo "-----> Be sure to edit 'shared/config/database.yml'."]
   
-  queue! "sudo ln -nfs #{app_path}/config/unicorn_init.sh /etc/init.d/unicorn_seotool"
+  queue! "sudo ln -nfs #{deploy_to}/current/config/nginx.conf /opt/nginx/conf/nginx.conf"
 
 end
  
