@@ -3,8 +3,9 @@ app_path = "/home/deployer/apps/seotool"
  
 worker_processes   2
 preload_app        true
-timeout            180
-listen 						 8080, :tcp_nopush => true
+timeout            30
+listen             "/home/deployer/.unicorn.sock", :backlog => 64
+listen             8080, :tcp_nopush => true
 working_directory  app_path
 pid                "#{app_path}/shared/tmp/pids/unicorn.pid"
 stderr_path        "#{app_path}/shared/log/unicorn.log"
