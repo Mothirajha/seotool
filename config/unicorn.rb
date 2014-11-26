@@ -6,7 +6,7 @@ preload_app        true
 timeout            180
 listen 						 8080, :tcp_nopush => true
 working_directory  app_path
-pid                "#{app_path}/current/tmp/pids/unicorn.pid"
+pid                "#{app_path}/shared/tmp/pids/unicorn.pid"
 stderr_path        "#{app_path}/shared/log/unicorn.log"
 stdout_path        "#{app_path}/shared/log/unicorn.log"
  

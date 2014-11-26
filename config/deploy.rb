@@ -73,7 +73,7 @@ end
 #                                                                       Unicorn
 # ==============================================================================
 namespace :unicorn do
-  set :unicorn_pid, "#{app_path}/tmp/pids/unicorn.pid"
+  set :unicorn_pid, "#{deploy_to}/shared/tmp/pids/unicorn.pid"
   set :start_unicorn, %{
     cd #{app_path}
     bundle exec unicorn -c #{app_path}/config/unicorn.rb -E #{rails_env} -D
