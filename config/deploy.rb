@@ -9,7 +9,7 @@ require 'mina_sidekiq/tasks'
 set :term_mode,       nil #Fix for password prompt
 set :rails_env,       'production'
  
-set :domain,          'xx.xxx.xx.xx'
+set :domain,          '178.79.133.9' 
 # set :port,            37894
  
 set :deploy_to,       "/home/deployer/apps/seotool"
@@ -24,7 +24,8 @@ set :keep_releases,   5
  
 #                                                                           Rbenv
 # ===============================================================================
-set :rbenv_path, '/home/deployer/.rbenv/bin/rbenv'
+# set :rbenv_path, '/home/deployer/.rbenv' not required when installed in default
+#                                          folder structure
  
 task :environment do
   invoke :'rbenv:load'
