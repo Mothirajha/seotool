@@ -6,7 +6,7 @@ preload_app        true
 timeout            30
 listen             8080, :tcp_nopush => true
 working_directory  app_path
-unless Dir[app_path+"/tmp/pids"]
+if Dir[app_path+"/tmp/pids"].empty?
 	`mkdir /home/deployer/apps/seotool/current/tmp/pids`
 end
 pid                "#{app_path}/tmp/pids/unicorn.pid"
