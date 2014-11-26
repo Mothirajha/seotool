@@ -41,7 +41,6 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 gem 'domainatrix'
 gem 'devise'
-gem 'queue_classic'
 gem 'jquery-ui-rails'
 gem 'sidekiq'
 gem 'sinatra', require: false

@@ -13,7 +13,7 @@ require 'mina_sidekiq/tasks'
 
 
 set :term_mode, nil # fix for password prompt
-set :domain, 'xxx.xx.xx.x' 
+set :domain, 'xx.xx.xxx.xx' 
 set :deploy_to, '/home/deployer/apps/seotool'
 set :repository, 'https://github.com/Mothirajha/seotool.git'
 set :branch, 'production'
