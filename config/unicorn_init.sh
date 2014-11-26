@@ -12,9 +12,10 @@ set -e
 
 # Feel free to change any of the following variables for your app:
 TIMEOUT=${TIMEOUT-60}
+BUNDLE=/home/deployer/.rbenv/shims/bundle
 APP_ROOT=/home/deployer/apps/seotool/current
 PID=$APP_ROOT/tmp/pids/unicorn.pid
-CMD="cd $APP_ROOT; bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E production"
+CMD="cd $APP_ROOT;su deployer -c '$BUNDLE exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E production'"
 AS_USER=deployer
 set -u
 

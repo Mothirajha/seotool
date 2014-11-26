@@ -13,8 +13,8 @@ require 'mina_sidekiq/tasks'
 
 
 set :term_mode, nil # fix for password prompt
-# set :domain, '178.79.133.9'
-set :deploy_to, '/home/deployer/apps/seotool'
+set :domain, 'xxx.xx.xxx.xx'
+set :deploy_to, '/home/deployer/apps/seotool/current'
 set :repository, 'https://github.com/Mothirajha/seotool.git'
 set :branch, 'production'
 set :rails_env, 'production'
@@ -51,7 +51,7 @@ task :setup => :environment do
 
   queue! %[touch "#{deploy_to}/shared/config/database.yml"]
   queue  %[echo "-----> Be sure to edit 'shared/config/database.yml'."]
-  queue! "sudo ln -nfs #{deploy_to}/config/unicorn_init.sh /etc/init.d/unicorn_seotool"
+  queue! "sudo 'ln -nfs #{deploy_to}/config/unicorn_init.sh /etc/init.d/unicorn_seotool'"
   queue! "sudo ln -nfs #{deploy_to}/config/nginx.conf /opt/nginx/conf/nginx.conf"
 
   # sidekiq needs a place to store its pid file and log file
