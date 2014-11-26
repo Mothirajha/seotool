@@ -62,7 +62,7 @@ task :deploy => :environment do
     invoke :'deploy:link_shared_paths'
     invoke :'sidekiq:quiet'
  
-    to :launch do      
+    to :launch do
       invoke :'unicorn:restart'
       queue "touch #{app_path}/tmp/restart.txt"
       invoke :'sidekiq:restart'
@@ -73,6 +73,7 @@ end
 #                                                                       Unicorn
 # ==============================================================================
 namespace :unicorn do
+  queue "touch #{app_path}/tmp/pids/unicorn.pid"
   set :unicorn_pid, "#{app_path}/tmp/pids/unicorn.pid"
   set :start_unicorn, %{
     cd #{app_path}
