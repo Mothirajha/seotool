@@ -12,7 +12,7 @@ set :rails_env,       'production'
 set :domain,          'xx.xx.xxx.xx'
 # set :port,            37894
  
-set :deploy_to,       "/home/apps/seotool"
+set :deploy_to,       "/home/deployer/apps/seotool"
 set :app_path,        "#{deploy_to}/current"
  
 set :repository,      'https://github.com/Mothirajha/seotool.git'
