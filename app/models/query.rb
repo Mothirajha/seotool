@@ -6,9 +6,9 @@ class Query < ActiveRecord::Base
 
   def self.to_csv(options={})
     CSV.generate(options) do |csv|
-      csv << ["Id", "Domain", "Campaign",  "Keyword", "Engine", "Position", "Previous Positon", "Last Updated"]
+      csv << ["Domain", "Campaign",  "Keyword", "Engine", "Position", "Ranking page Url", "Previous Positon", "Last Updated"]
       all.each do |query|
-        csv << [query.id, query.campaign.domain.name, query.campaign.name  ,  query.keyword, query.search_engine.engine, query.query_result.position, query.query_result.previous_position, query.query_result.last_updated]
+        csv << [query.campaign.domain.name, query.campaign.name, query.keyword, query.search_engine.engine, query.query_result.position, query.query_result.url, query.query_result.previous_position, query.query_result.last_updated.strftime("%d-%b-%Y")]
       end
     end
 

@@ -1,20 +1,19 @@
 <table id="position" class="display table-bordered table-striped">
   <thead>
     <tr>
-      <th>Sl No</th>
       <th>Keyword</th>
       <th>Engine</th>
       <th>Domain</th>
       <th>Campaign</th>
       <th>Position</th>
       <th>Previous Position</th>
+      <th>Url</th>
       <th>Last Updated at </th>
     </tr>
   </thead>
   <tbody>
     <% queries.each do |query| %>
       <tr>
-        <td> <%= query.id %></td>
         <td> <%= query.keyword %>  </td>
         <td> <%= query.search_engine.engine %> </td>
         <td> <%= query.campaign.domain.name %> </td>
@@ -22,7 +21,8 @@
           <% if query.query_result.present? %>
             <td> <%= query.query_result.position %> </td>
             <td> <%= query.query_result.previous_position %></td>
-            <td> <%= query.query_result.last_updated.strftime("%d %b %Y") %></td>
+            <td> <%= query.query_result.url %></td>
+            <td> <%= query.query_result.last_updated.strftime("%d-%b-%Y") %></td>
           <% else %>
             <td> - </td>
             <td> - </td>
