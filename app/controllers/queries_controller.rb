@@ -12,8 +12,8 @@ class QueriesController < ApplicationController
     respond_to do |format|
       if @queries
         format.html
-        format.csv {send_data @queries.to_csv}
-        format.xls { send_data @queries.to_csv(col_sep: "\t") }
+        format.csv {send_data @queries.to_csv, filename: "keyword_positons_on_#{Time.now.strftime("%d-%b-%Y")}.csv" }
+        format.xls { send_data @queries.to_csv(col_sep: "\t"), filename: "keyword_positons_on_#{Time.now.strftime("%d-%b-%Y")}.xls" }
       end
     end
   end

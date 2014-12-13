@@ -8,6 +8,9 @@ module V1::Googler
       @public_suffix = get_public_suffix(domain)
       @subdomain = get_subdomain(domain)
       @keyword = keyword
+      @agent = Mechanize.new do |mechanize|
+        mechanize.user_agent_alias = (Mechanize::AGENT_ALIASES.keys - ['Mechanize']).sample
+      end
     end
 
     def get_proper_domain_name(url)
@@ -39,14 +42,14 @@ module V1::Googler
     def get_keyword_position_on_100_result
       search_parameter = V1::Googler::GOOGLE_ATTRIBUTES['search_parameter']
       clean_keyword = clean_keyword(@keyword)
-      @agent = Mechanize.new
+      #@agent = Mechanize.new
       result_page = @agent.get @engine + search_parameter + clean_keyword
       parser_result = parser(result_page)
       to_hash(parser_result)
     end
 
     def get_google_form
-      @agent = Mechanize.new
+      #@agent = Mechanize.new
       home_page = @agent.get @engine
       @google_form = home_page.form
     end
