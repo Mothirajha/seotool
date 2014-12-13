@@ -20,9 +20,9 @@ class HomeController < ApplicationController
         module_obj = get_crawler_obj(params[:engine], params[:domain], keyword)
         @result <<  module_obj.get_keyword_position_on_100_result
       end
-      @search_engines = get_search_engine 
+      @search_engines = get_search_engine
     else
-      @search_engines = get_search_engine 
+      @search_engines = get_search_engine
     end 
   end
 

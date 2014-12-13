@@ -5,12 +5,28 @@ module V1::Googler
     def initialize engine, domain, keyword
       @engine = engine
       @domain = get_proper_domain_name(domain)
+      @public_suffix = get_public_suffix(domain)
+      @subdomain = get_subdomain(domain)
       @keyword = keyword
     end
 
-    def get_proper_domain_name(domain)
-      domainatrix_object = Domainatrix.parse(domain)
+    def get_proper_domain_name(url)
+      domainatrix_object = get_domainatrix_object(url)
       domainatrix_object.domain
+    end
+
+    def get_public_suffix(url)
+      domainatrix_object = get_domainatrix_object(url)
+      domainatrix_object.public_suffix
+    end
+
+    def get_subdomain(url)
+      domainatrix_object = get_domainatrix_object(url)
+      domainatrix_object.subdomain
+    end
+
+    def get_domainatrix_object(url)
+      Domainatrix.parse(url)      
     end
 
     def get_keyword_position
@@ -41,7 +57,7 @@ module V1::Googler
     end
 
     def parser(result_page)
-      parser_obj = V1::Googler::Parser.new(result_page, @domain)
+      parser_obj = V1::Googler::Parser.new(result_page, @domain, @public_suffix, @subdomain)
       parser_result = parser_obj.get_page_rank
     end
 

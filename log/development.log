@@ -4594,3 +4594,852 @@ Started GET "/assets/search_engines.js?body=1" for 127.0.0.1 at 2014-11-06 09:58
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 09:58:27 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-05 00:09:04 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (55.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#show as HTML
+  [1m[35mSearchEngine Load (79.2ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (245.1ms)
+  Rendered application/_header.html.erb (0.9ms)
+  Rendered application/_footer.html.erb (0.4ms)
+Completed 200 OK in 1734ms (Views: 1473.1ms | ActiveRecord: 238.5ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/jquery.dataTables.css?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/signin.css?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:07 +0530
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-12-05 00:09:19 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.erb (1.5ms)
+  Rendered users/sessions/new.html.erb within layouts/signin (109.8ms)
+Completed 200 OK in 324ms (Views: 274.5ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:19 +0530
+
+
+Started GET "/assets/fontawesome-webfont.woff?v=3.2.1" for 127.0.0.1 at 2014-12-05 00:09:19 +0530
+
+
+Started GET "/assets/user.png" for 127.0.0.1 at 2014-12-05 00:09:19 +0530
+
+
+Started GET "/assets/password.png" for 127.0.0.1 at 2014-12-05 00:09:19 +0530
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2014-12-05 00:09:24 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered users/shared/_links.erb (1.4ms)
+  Rendered users/registrations/new.html.erb within layouts/signin (5.5ms)
+Completed 200 OK in 183ms (Views: 179.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:24 +0530
+
+
+Started POST "/users" for 127.0.0.1 at 2014-12-05 00:09:49 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t432JG1V2g72UISTqGG1WqRfRsAFN43Y3FwuzmbKHpY=", "user"=>{"email"=>"rajha12@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (176.9ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'rajha12@gmail.com' LIMIT 1
+  [1m[36m (20.5ms)[0m  [1mROLLBACK[0m
+  Rendered users/shared/_links.erb (0.2ms)
+  Rendered users/registrations/new.html.erb within layouts/signin (3.3ms)
+Completed 200 OK in 472ms (Views: 108.1ms | ActiveRecord: 197.6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:50 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-05 00:09:52 +0530
+Processing by HomeController#show as HTML
+  [1m[35mSearchEngine Load (0.3ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (1.2ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 175ms (Views: 174.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:52 +0530
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-12-05 00:09:54 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.erb (0.3ms)
+  Rendered users/sessions/new.html.erb within layouts/signin (3.1ms)
+Completed 200 OK in 133ms (Views: 131.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-05 00:09:54 +0530
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-12-05 00:10:00 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t432JG1V2g72UISTqGG1WqRfRsAFN43Y3FwuzmbKHpY=", "user"=>{"email"=>"rajha12@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'rajha12@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = 2[0m  [["current_sign_in_at", "2014-12-04 18:40:01.165739"], ["last_sign_in_at", "2014-11-19 19:27:40.724562"], ["sign_in_count", 3], ["updated_at", "2014-12-04 18:40:01.167091"]]
+  [1m[35m (19.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 276ms (ActiveRecord: 20.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-05 00:10:01 +0530
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Processing by DashboardController#show as HTML
+  [1m[35mCampaign Load (34.5ms)[0m  SELECT "campaigns".* FROM "campaigns"
+  [1m[36mSearchEngine Load (0.5ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  [1m[35mDomain Load (19.2ms)[0m  SELECT "domains".* FROM "domains"
+  Rendered queries/_form.html.erb (71.0ms)
+  Rendered dashboard/show.html.erb within layouts/application (131.1ms)
+  Rendered application/_header.html.erb (0.4ms)
+  Rendered application/_tabs.html.erb (0.6ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 342ms (Views: 227.4ms | ActiveRecord: 74.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-05 00:10:01 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-13 18:31:55 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (55.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#show as HTML
+  [1m[35mSearchEngine Load (69.0ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (123.3ms)
+  Rendered application/_header.html.erb (0.8ms)
+  Rendered application/_footer.html.erb (0.3ms)
+Completed 200 OK in 696ms (Views: 557.6ms | ActiveRecord: 116.4ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/signin.css?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/jquery.dataTables.css?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/dashboard.css?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 18:31:58 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.com&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 18:32:23 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.com", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered home/show.html.erb within layouts/application (1.3ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 1051ms (Views: 117.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 18:32:24 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 18:32:24 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 18:32:39 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.3ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (1.2ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 620ms (Views: 132.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 18:32:40 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 18:32:40 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 18:32:46 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered home/show.html.erb within layouts/application (1.1ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.1ms)
+Completed 200 OK in 846ms (Views: 172.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 18:32:47 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 18:32:47 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 18:32:54 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.3ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (1.3ms)
+  Rendered application/_header.html.erb (0.3ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 644ms (Views: 120.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 18:32:54 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 18:32:54 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 18:32:58 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered home/show.html.erb within layouts/application (1.3ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 650ms (Views: 115.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 18:32:59 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 18:32:59 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=thegosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 18:43:59 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"thegosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (15.3ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (108.4ms)
+  Rendered application/_header.html.erb (3.8ms)
+  Rendered application/_footer.html.erb (0.1ms)
+Completed 200 OK in 1436ms (Views: 531.9ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 18:44:01 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 18:44:01 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=thegosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 18:47:59 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"thegosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered home/show.html.erb within layouts/application (1.8ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.1ms)
+Completed 200 OK in 689ms (Views: 161.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 18:48:00 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 18:48:00 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 18:48:20 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.3ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (1.3ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 740ms (Views: 107.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 18:48:21 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 18:48:21 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 18:48:29 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered home/show.html.erb within layouts/application (1.3ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 634ms (Views: 121.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 18:48:30 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 18:48:30 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 18:48:34 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.3ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (1.2ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 680ms (Views: 139.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 18:48:35 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 18:48:35 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:02:47 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+Completed 500 Internal Server Error in 521ms
+
+SyntaxError (/home/beena/Mothi/seotool/app/services/v1/googler/parser.rb:60: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/services/v1/googler/parser.rb:60: syntax error, unexpected end-of-input, expecting keyword_end
+  app/services/v1/googler/scrap.rb:44:in `parser'
+  app/services/v1/googler/scrap.rb:28:in `get_keyword_position_on_100_result'
+  app/controllers/home_controller.rb:21:in `block in load_variables'
+  app/controllers/home_controller.rb:19:in `each'
+  app/controllers/home_controller.rb:19:in `load_variables'
+  app/controllers/home_controller.rb:7:in `show'
+
+
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.0ms)
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:03:33 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+Completed 500 Internal Server Error in 475ms
+
+NameError (undefined local variable or method `url' for V1::Googler::Parser:Class):
+  app/services/v1/googler/parser.rb:4:in `<class:Parser>'
+  app/services/v1/googler/parser.rb:2:in `<module:Googler>'
+  app/services/v1/googler/parser.rb:1:in `<top (required)>'
+  app/services/v1/googler/scrap.rb:44:in `parser'
+  app/services/v1/googler/scrap.rb:28:in `get_keyword_position_on_100_result'
+  app/controllers/home_controller.rb:21:in `block in load_variables'
+  app/controllers/home_controller.rb:19:in `each'
+  app/controllers/home_controller.rb:19:in `load_variables'
+  app/controllers/home_controller.rb:7:in `show'
+
+
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.9ms)
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:06:15 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.4ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (10.6ms)
+  Rendered application/_header.html.erb (1.0ms)
+  Rendered application/_footer.html.erb (0.3ms)
+Completed 200 OK in 843ms (Views: 346.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:06:16 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:06:16 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:16:34 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+Completed 500 Internal Server Error in 536ms
+
+ArgumentError (wrong number of arguments (4 for 2)):
+  app/services/v1/googler/parser.rb:5:in `initialize'
+  app/services/v1/googler/scrap.rb:60:in `new'
+  app/services/v1/googler/scrap.rb:60:in `parser'
+  app/services/v1/googler/scrap.rb:44:in `get_keyword_position_on_100_result'
+  app/controllers/home_controller.rb:21:in `block in load_variables'
+  app/controllers/home_controller.rb:19:in `each'
+  app/controllers/home_controller.rb:19:in `load_variables'
+  app/controllers/home_controller.rb:7:in `show'
+
+
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.2ms)
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:16:51 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+Completed 500 Internal Server Error in 701ms
+
+NameError (undefined local variable or method `subdomain' for #<V1::Googler::Parser:0x007facd909dd68>):
+  app/services/v1/googler/parser.rb:24:in `block in get_page_rank'
+  app/services/v1/googler/parser.rb:15:in `get_page_rank'
+  app/services/v1/googler/scrap.rb:61:in `parser'
+  app/services/v1/googler/scrap.rb:44:in `get_keyword_position_on_100_result'
+  app/controllers/home_controller.rb:21:in `block in load_variables'
+  app/controllers/home_controller.rb:19:in `each'
+  app/controllers/home_controller.rb:19:in `load_variables'
+  app/controllers/home_controller.rb:7:in `show'
+
+
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (36.6ms)
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:17:36 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+Completed 500 Internal Server Error in 628ms
+
+NameError (undefined local variable or method `subdomain' for #<V1::Googler::Parser:0x00000005ac59b8>):
+  app/services/v1/googler/parser.rb:24:in `block in get_page_rank'
+  app/services/v1/googler/parser.rb:15:in `get_page_rank'
+  app/services/v1/googler/scrap.rb:61:in `parser'
+  app/services/v1/googler/scrap.rb:44:in `get_keyword_position_on_100_result'
+  app/controllers/home_controller.rb:21:in `block in load_variables'
+  app/controllers/home_controller.rb:19:in `each'
+  app/controllers/home_controller.rb:19:in `load_variables'
+  app/controllers/home_controller.rb:7:in `show'
+
+
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (38.9ms)
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:18:44 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+Completed 401 Unauthorized in 397452ms
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:25:30 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+Completed 401 Unauthorized in 74279ms
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:27:02 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.4ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (8.0ms)
+  Rendered application/_header.html.erb (0.6ms)
+  Rendered application/_footer.html.erb (0.4ms)
+Completed 200 OK in 902ms (Views: 269.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:27:04 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:27:04 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=thegosf&domain=www.thegosf.in&engine=&commit=submit" for 127.0.0.1 at 2014-12-13 19:27:13 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"thegosf", "domain"=>"www.thegosf.in", "engine"=>"", "commit"=>"submit"}
+Completed 500 Internal Server Error in 3ms
+
+ArgumentError (absolute URL needed (not /search?num=100&q=thegosf)):
+  app/services/v1/googler/scrap.rb:43:in `get_keyword_position_on_100_result'
+  app/controllers/home_controller.rb:21:in `block in load_variables'
+  app/controllers/home_controller.rb:19:in `each'
+  app/controllers/home_controller.rb:19:in `load_variables'
+  app/controllers/home_controller.rb:7:in `show'
+
+
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.4ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/beena/.rvm/gems/ruby-2.1.4@seotool/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.4ms)
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=thegosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:27:17 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"thegosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.4ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered home/show.html.erb within layouts/application (1.9ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 899ms (Views: 147.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:27:18 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:27:18 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=thegosf&domain=www.thegosf.com&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:27:28 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"thegosf", "domain"=>"www.thegosf.com", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.3ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (1.2ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 735ms (Views: 176.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:27:29 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:27:29 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=thegosf&domain=www.thegosf.com&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:28:23 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"thegosf", "domain"=>"www.thegosf.com", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered home/show.html.erb within layouts/application (1.4ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 690ms (Views: 136.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:28:24 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:28:24 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=desidime&domain=www.desidime.com&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:29:54 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"desidime", "domain"=>"www.desidime.com", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.4ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (1.2ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 880ms (Views: 140.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:29:55 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:29:55 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=desidime&domain=www.desidime.com&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:30:25 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"desidime", "domain"=>"www.desidime.com", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+Completed 401 Unauthorized in 124166ms
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=desidime&domain=www.desidime.com&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:32:35 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"desidime", "domain"=>"www.desidime.com", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.4ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (10.5ms)
+  Rendered application/_header.html.erb (0.7ms)
+  Rendered application/_footer.html.erb (0.6ms)
+Completed 200 OK in 13057ms (Views: 233.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:32:48 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:32:48 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=thegosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:32:59 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"thegosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.4ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered home/show.html.erb within layouts/application (2.3ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 9509ms (Views: 120.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:33:09 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:33:09 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=thegosf&domain=www.thegosf.com&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:33:53 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"thegosf", "domain"=>"www.thegosf.com", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.3ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (5.6ms)
+  Rendered application/_header.html.erb (0.2ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 639ms (Views: 118.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:33:54 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:33:54 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=thegosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:34:22 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"thegosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered home/show.html.erb within layouts/application (3.6ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 645ms (Views: 150.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:34:23 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:34:23 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=thegosf&domain=www.thegosf.com&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:34:42 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"thegosf", "domain"=>"www.thegosf.com", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.3ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (1.2ms)
+  Rendered application/_header.html.erb (0.2ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 692ms (Views: 140.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:34:43 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:34:43 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.in&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:34:58 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.in", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered home/show.html.erb within layouts/application (1.2ms)
+  Rendered application/_header.html.erb (0.2ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 752ms (Views: 129.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:34:58 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:34:58 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=gosf&domain=www.thegosf.com&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:35:07 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"gosf", "domain"=>"www.thegosf.com", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.3ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (1.3ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 783ms (Views: 135.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:35:08 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:35:08 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=deals+india&domain=http%3A%2F%2Fin.linkis.in%2F&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:35:31 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"deals india", "domain"=>"http://in.linkis.in/", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.4ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered home/show.html.erb within layouts/application (1.7ms)
+  Rendered application/_header.html.erb (0.2ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 1065ms (Views: 127.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:35:32 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:35:32 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=linkisin&domain=http%3A%2F%2Fin.linkis.in%2F&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:35:46 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"linkisin", "domain"=>"http://in.linkis.in/", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.3ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (1.4ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 1142ms (Views: 120.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:35:47 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:35:47 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=in.linkis.in&domain=http%3A%2F%2Fin.linkis.in%2F&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:43:44 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"in.linkis.in", "domain"=>"http://in.linkis.in/", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[36mSearchEngine Load (0.3ms)[0m  [1mSELECT "search_engines".* FROM "search_engines"[0m
+  Rendered home/show.html.erb within layouts/application (1.2ms)
+  Rendered application/_header.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (0.0ms)
+Completed 200 OK in 803ms (Views: 131.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:43:44 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:43:44 +0530
+
+
+Started GET "/?utf8=%E2%9C%93&keyword=in.linkis.in&domain=http%3A%2F%2Flinkis.in%2F&engine=http%3A%2F%2Fwww.google.co.in%2F&commit=submit" for 127.0.0.1 at 2014-12-13 19:43:57 +0530
+Processing by HomeController#show as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"in.linkis.in", "domain"=>"http://linkis.in/", "engine"=>"http://www.google.co.in/", "commit"=>"submit"}
+  [1m[35mSearchEngine Load (0.3ms)[0m  SELECT "search_engines".* FROM "search_engines"
+  Rendered home/show.html.erb within layouts/application (1.2ms)
+  Rendered application/_header.html.erb (0.2ms)
+  Rendered application/_footer.html.erb (0.1ms)
+Completed 200 OK in 628ms (Views: 135.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-13 19:43:58 +0530
+
+
+Started GET "/assets/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2014-12-13 19:43:58 +0530
