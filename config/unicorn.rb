@@ -1,15 +1,20 @@
 # https://raw.githubusercontent.com/defunkt/unicorn/master/examples/unicorn.conf.rb
 app_path = "/home/deployer/apps/seotool/current"
  
+if Dir[app_path+"/tmp/"].empty?
+  `mkdir /home/deployer/apps/seotool/current/tmp`
+  `touch /home/deployer/apps/seotool/current/tmp/pids`
+else
+  `touch /home/deployer/apps/seotool/current/tmp/pids`
+end
+
 worker_processes   2
 preload_app        true
 timeout            30
 listen             "/tmp/unicorn.seotool.sock"
 listen             8080, :tcp_nopush => true
 working_directory  app_path
-if Dir[app_path+"/tmp/pids"].empty?
-	`mkdir /home/deployer/apps/seotool/current/tmp/pids`
-end
+
 pid                "#{app_path}/tmp/pids/unicorn.pid"
 stderr_path        "#{app_path}/log/unicorn.log"
 stdout_path        "#{app_path}/log/unicorn.log"
