@@ -1,12 +1,6 @@
 # https://raw.githubusercontent.com/defunkt/unicorn/master/examples/unicorn.conf.rb
 app_path = "/home/deployer/apps/seotool/current"
- 
-if Dir[app_path+"/tmp/"].empty?
-  `mkdir /home/deployer/apps/seotool/current/tmp`
-  `touch /home/deployer/apps/seotool/current/tmp/pids`
-else
-  `touch /home/deployer/apps/seotool/current/tmp/pids`
-end
+shared_path = "/home/deployer/apps/seotool/shared"
 
 worker_processes   2
 preload_app        true
@@ -15,9 +9,9 @@ listen             "/tmp/unicorn.seotool.sock"
 listen             8080, :tcp_nopush => true
 working_directory  app_path
 
-pid                "#{app_path}/tmp/pids/unicorn.pid"
-stderr_path        "#{app_path}/log/unicorn.log"
-stdout_path        "#{app_path}/log/unicorn.log"
+pid                "#{shared_path}/tmp/pids/unicorn.pid"
+stderr_path        "#{shared_path}/log/unicorn.log"
+stdout_path        "#{shared_path}/log/unicorn.log"
  
 before_fork do |server, worker|
   ActiveRecord::Base.connection.disconnect!

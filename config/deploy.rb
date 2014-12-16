@@ -37,7 +37,7 @@ task :setup do
 
   queue! %[mkdir -p "#{deploy_to}/shared/tmp/pids"]
   
-  queue! %[mkdir -p "#{deploy_to}/shared/log"]  
+  queue! %[mkdir -p "#{deploy_to}/shared/log"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/log"]
   
   queue! %[mkdir -p "#{deploy_to}/shared/config"]
@@ -64,7 +64,6 @@ task :deploy => :environment do
  
     to :launch do
       invoke :'unicorn:restart'
-      queue "touch #{app_path}/tmp/restart.txt"
       invoke :'sidekiq:restart'
     end
   end
@@ -73,7 +72,7 @@ end
 #                                                                       Unicorn
 # ==============================================================================
 namespace :unicorn do
-  set :unicorn_pid, "#{app_path}/tmp/pids/unicorn.pid"
+  set :unicorn_pid, "#{deploy_to}/shared/tmp/pids"
   set :start_unicorn, %{
     cd #{app_path}
     bundle exec unicorn -c #{app_path}/config/unicorn.rb -E #{rails_env} -D
