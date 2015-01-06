@@ -2,7 +2,7 @@ class FindPositionWorker
   include Sidekiq::Worker
   # sidekiq_options queue: "high"
   # sidekiq_options retry: false
-  
+
   def self.get_position(crawler, domain, keyword, engine, query_id)
 		result = FindPositionAdapter.call_crawler_service(crawler, domain, keyword, engine, query_id)
 		QueryResult.insert_or_update_data(result)
@@ -12,7 +12,8 @@ class FindPositionWorker
   	query_ids.each do |query_id|
   		query = Query.find query_id
   		keyword = query.keyword
-  		FindPositionWorker.delay.get_position(crawler, domain, keyword, engine, query_id)
+      delay_time = rand(4..20)
+  		FindPositionWorker.delay_for(delay_time.minutes).get_position(crawler, domain, keyword, engine, query_id)
   	end
   end
 
