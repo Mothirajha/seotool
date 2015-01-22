@@ -13,7 +13,7 @@ require 'mina_sidekiq/tasks'
 
 
 set :term_mode, nil # fix for password prompt
-# set :domain, '85.159.208.78'
+set :domain, '212.71.234.45'
 set :deploy_to, '/home/deployer/apps/seotool'
 set :repository, 'https://github.com/Mothirajha/seotool.git'
 set :branch, 'master'
@@ -77,13 +77,13 @@ task :deploy => :environment do
     end
   end
 
- 
+
 end
 
 
 # desc "cron jon"
 # task :initiate_whenever => :environment do
-#   invoke :rewrite_cronjob 
+#   invoke :rewrite_cronjob
 # end
 
 # desc "Write crontab whenever"
