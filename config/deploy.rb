@@ -51,8 +51,8 @@ task :setup => :environment do
 
   queue! %[touch "#{deploy_to}/shared/config/database.yml"]
   queue  %[echo "-----> Be sure to edit 'shared/config/database.yml'."]
-  queue! "sudo ln -nfs #{deploy_to}/config/unicorn_init.sh /etc/init.d/unicorn_seotool"
-  queue! "sudo ln -nfs #{deploy_to}/config/nginx.conf /opt/nginx/conf/nginx.conf"
+
+    queue! "sudo ln -nfs #{deploy_to}/config/nginx.conf /opt/nginx/conf/nginx.conf"
 
   # sidekiq needs a place to store its pid file and log file
   queue! %[mkdir -p "#{deploy_to}/shared/tmp/pids/"]
@@ -72,6 +72,7 @@ task :deploy => :environment do
     # invoke :'rewrite_cronjob'
 
     to :launch do
+      invoke :'unicorn:restart'
       queue "touch #{deploy_to}/tmp/restart.txt"
       invoke :'sidekiq:restart'
     end
@@ -80,6 +81,40 @@ task :deploy => :environment do
 
 end
 
+namespace :unicorn do
+  set :unicorn_pid, "#{deploy_to}/shared/tmp/pids/unicorn.pid"
+  set :start_unicorn, %{
+    cd #{app_path}
+    bundle exec unicorn -c #{app_path}/config/unicorn.rb -E #{rails_env} -D
+  }
+
+  #                                                                    Start task
+  # ------------------------------------------------------------------------------
+  desc "Start unicorn"
+  task :start => :environment do
+    queue 'echo "-----> Start Unicorn"'
+    queue! start_unicorn
+  end
+
+  #                                                                     Stop task
+  # ------------------------------------------------------------------------------
+  desc "Stop unicorn"
+  task :stop do
+    queue 'echo "-----> Stop Unicorn"'
+    queue! %{
+      test -s "#{unicorn_pid}" && kill -QUIT `cat "#{unicorn_pid}"` && echo "Stop Ok" && exit 0
+      echo >&2 "Not running"
+    }
+  end
+
+  #                                                                  Restart task
+  # ------------------------------------------------------------------------------
+  desc "Restart unicorn using 'upgrade'"
+  task :restart => :environment do
+    invoke 'unicorn:stop'
+    invoke 'unicorn:start'
+  end
+end
 
 # desc "cron jon"
 # task :initiate_whenever => :environment do
